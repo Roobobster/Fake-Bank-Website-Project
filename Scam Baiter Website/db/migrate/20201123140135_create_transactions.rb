@@ -1,7 +1,7 @@
 class CreateTransactions < ActiveRecord::Migration[5.1]
   def change
     create_table :transaction do |t|
-      t.string :account_id
+      t.belongs_to :subject
       t.datetime :transaction_datetime
       t.float :amount
       t.text :message
