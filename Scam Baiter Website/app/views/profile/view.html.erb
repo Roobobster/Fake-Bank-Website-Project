@@ -1,0 +1,23 @@
+<h1>Profile#view</h1>
+<p>Find me in app/views/profile/view.html.erb</p>
+<br/>
+<%if @isnew %>
+<%= 'Is New profile'%>
+<%else%>
+<%= 'Is not new profile'%>
+<%end%>
+<br/>
+<br/>
+<%= 'Name: ' + @robertUser.first_name + ' ' + @robertUser.last_name%>
+<br/>
+<%= 'Email: ' + @robertUser.email %>
+<br/>
+<%= 'address: ' + @robertUser.address %>
+<br/>
+<%= 'telephone: ' + @robertUser.telephone%>
+<br/>
+<%= 'age: ' + @robertUser.age.to_s %>
+<br/>
+<%= 'gender: ' + @robertUser.gender %>
+<br/>
+

@@ -15,12 +15,13 @@ ActiveRecord::Schema.define(version: 20201123151610) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "account", force: :cascade do |t|
-    t.string "profile_id"
+  create_table "accounts", force: :cascade do |t|
+    t.bigint "profiles_id"
     t.string "type"
     t.float "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["profiles_id"], name: "index_accounts_on_profiles_id"
   end
 
   create_table "profile", force: :cascade do |t|
@@ -49,8 +50,8 @@ ActiveRecord::Schema.define(version: 20201123151610) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "transaction", force: :cascade do |t|
-    t.string "account_id"
+  create_table "transactions", force: :cascade do |t|
+    t.bigint "subjects_id"
     t.datetime "transaction_datetime"
     t.float "amount"
     t.text "message"
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20201123151610) do
     t.string "payee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["subjects_id"], name: "index_transactions_on_subjects_id"
   end
 
 end
