@@ -22,7 +22,7 @@ class HomeController < ApplicationController
 
   def index
     generateGreeting
-    @logged_in = false;
+    @logged_in = true;
     @username = "Wenyu";
   end
 

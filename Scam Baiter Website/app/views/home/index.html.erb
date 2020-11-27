@@ -18,20 +18,24 @@
 </script>
 
 <div class="navbar">
-    <%= link_to root_url do %>
-        <%= image_tag("/images/logo.jpg", :size => "120x100")%>
-    <% end %>
 
-    <div style="float: right">
-        <% if !@logged_in %>
-            <button><%= "Login" %></button>
-            <button><%= "Register" %></button>
-        <% else %>
-            <div><%= @greeting %> <%= @username %></div>
-            <button><%= "sign_out" %></button>
+    <ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden;">
+
+        <%= link_to root_url do %>
+            <%= image_tag("/images/logo.jpg", :size => "120x100")%>
         <% end %>
-        <button><%= "Contact Us" %></button>
-    </div>
+
+        <li style="float: right; display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;"><%= "Contact Us" %></li>
+
+        <% if !@logged_in %>
+            <li style="float: right; display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;"><%= "Register" %></li>
+            <li style="float: right; display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;"><%= "Login" %></li>
+        <% else %>
+            <li style="float: right; display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;"><%= "Sign Out" %></li>
+            <div style="float: right; display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;"><%= @greeting %>, <%= @username %></div>
+        <% end %>
+
+    </ul>
 
 </div>
 

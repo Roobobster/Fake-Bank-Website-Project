@@ -4218,3 +4218,433 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 12ms (Views: 3.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2020-11-27 21:13:44 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.7ms)
+Completed 200 OK in 15ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:15:23 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.2ms)
+Completed 200 OK in 12ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:15:25 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.2ms)
+Completed 200 OK in 17ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:15:27 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.5ms)
+Completed 200 OK in 20ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:15:28 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.6ms)
+Completed 200 OK in 22ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:15:32 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (430.0ms)
+Completed 500 Internal Server Error in 448ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/home/index.html.erb:27: unknown regexp options - vw
+/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/home/index.html.erb:27: syntax error, unexpected ')', expecting ':'
+...rofile/view?first_name=Robert );@output_buffer.safe_append='...
+...                              ^
+/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/home/index.html.erb:30: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;         else 
+                  ^~~~
+/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/home/index.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;         end 
+                  ^~~
+/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/home/index.html.erb:75: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/home/index.html.erb:77: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/home/index.html.erb:27: unknown regexp options - vw
+app/views/home/index.html.erb:27: syntax error, unexpected ')', expecting ':'
+app/views/home/index.html.erb:30: syntax error, unexpected keyword_else, expecting ')'
+app/views/home/index.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+app/views/home/index.html.erb:75: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/home/index.html.erb:77: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for ::1 at 2020-11-27 21:15:39 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.7ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/home/index.html.erb:27: unknown regexp options - vw
+/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/home/index.html.erb:27: syntax error, unexpected ')', expecting ':'
+...rofile/view?first_name=Robert );@output_buffer.safe_append='...
+...                              ^
+/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/home/index.html.erb:30: syntax error, unexpected keyword_else, expecting ')'
+'.freeze;         else 
+                  ^~~~
+/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/home/index.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;         end 
+                  ^~~
+/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/home/index.html.erb:75: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/home/index.html.erb:77: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/home/index.html.erb:27: unknown regexp options - vw
+app/views/home/index.html.erb:27: syntax error, unexpected ')', expecting ':'
+app/views/home/index.html.erb:30: syntax error, unexpected keyword_else, expecting ')'
+app/views/home/index.html.erb:33: syntax error, unexpected keyword_end, expecting ')'
+app/views/home/index.html.erb:75: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/home/index.html.erb:77: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for ::1 at 2020-11-27 21:15:49 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.0ms)
+Completed 200 OK in 12ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:15:52 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.0ms)
+Completed 200 OK in 12ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:16:10 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.3ms)
+Completed 200 OK in 14ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:17:41 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (5.3ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Robert):
+    24: 
+    25:     <ul style="float: right">
+    26:         <% if !@logged_in %>
+    27:             <li><%= link_to("click", controller: "profile", action: "view", id: first_name=Robert) %></li>
+    28:             <li><%= "Login" %></li>
+    29:             <li><%= "Register" %></li>
+    30:         <% else %>
+  
+app/views/home/index.html.erb:27:in `_app_views_home_index_html_erb___3233764608796081700_70332567207720'
+Started GET "/" for ::1 at 2020-11-27 21:17:41 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (7.4ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Robert):
+    24: 
+    25:     <ul style="float: right">
+    26:         <% if !@logged_in %>
+    27:             <li><%= link_to("click", controller: "profile", action: "view", id: first_name=Robert) %></li>
+    28:             <li><%= "Login" %></li>
+    29:             <li><%= "Register" %></li>
+    30:         <% else %>
+  
+app/views/home/index.html.erb:27:in `_app_views_home_index_html_erb___3233764608796081700_70332552726840'
+Started GET "/" for ::1 at 2020-11-27 21:17:56 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (5.7ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Robert):
+    24: 
+    25:     <ul style="float: right">
+    26:         <% if !@logged_in %>
+    27:             <li><%= link_to "click", controller: "profile", action: "view", id: first_name=Robert %></li>
+    28:             <li><%= "Login" %></li>
+    29:             <li><%= "Register" %></li>
+    30:         <% else %>
+  
+app/views/home/index.html.erb:27:in `_app_views_home_index_html_erb___3233764608796081700_70332567486340'
+Started GET "/" for ::1 at 2020-11-27 21:18:29 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.0ms)
+Completed 200 OK in 12ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:18:31 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.2ms)
+Completed 200 OK in 13ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:18:33 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.2ms)
+Completed 200 OK in 13ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:18:34 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.1ms)
+Completed 200 OK in 13ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:18:35 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.9ms)
+Completed 200 OK in 14ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:18:35 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.2ms)
+Completed 200 OK in 14ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:18:35 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.0ms)
+Completed 200 OK in 12ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/index" for ::1 at 2020-11-27 21:18:42 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.9ms)
+Completed 200 OK in 11ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:18:43 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.0ms)
+Completed 200 OK in 11ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:20:19 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.0ms)
+Completed 200 OK in 11ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:20:39 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.9ms)
+Completed 200 OK in 13ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:22:12 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.0ms)
+Completed 200 OK in 12ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:22:48 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.9ms)
+Completed 200 OK in 11ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:23:27 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.9ms)
+Completed 200 OK in 12ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:25:52 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/home/index.html.erb:27: syntax error, unexpected ',', expecting ')'
+...output_buffer.append=( "Login", class="login" );@output_buff...
+...                              ^):
+  
+app/views/home/index.html.erb:27: syntax error, unexpected ',', expecting ')'
+Started GET "/" for ::1 at 2020-11-27 21:26:51 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.8ms)
+Completed 200 OK in 13ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:27:02 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.9ms)
+Completed 200 OK in 12ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:27:18 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.9ms)
+Completed 200 OK in 14ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:27:23 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.9ms)
+Completed 200 OK in 15ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:27:48 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.9ms)
+Completed 200 OK in 13ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:28:32 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.7ms)
+Completed 200 OK in 12ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:28:47 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.0ms)
+Completed 200 OK in 17ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:29:39 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.7ms)
+Completed 200 OK in 11ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:29:57 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.8ms)
+Completed 200 OK in 13ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:30:00 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.7ms)
+Completed 200 OK in 13ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:30:10 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.8ms)
+Completed 200 OK in 12ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:30:42 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.9ms)
+Completed 200 OK in 15ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:32:22 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.8ms)
+Completed 200 OK in 13ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:32:38 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.8ms)
+Completed 200 OK in 14ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:33:10 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.8ms)
+Completed 200 OK in 11ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:33:24 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.8ms)
+Completed 200 OK in 12ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:37:04 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.0ms)
+Completed 200 OK in 14ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:38:37 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.9ms)
+Completed 200 OK in 7ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:38:41 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.2ms)
+Completed 200 OK in 15ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:39:12 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (0.9ms)
+Completed 200 OK in 12ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 21:39:16 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.2ms)
+Completed 200 OK in 14ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
