@@ -1,10 +1,71 @@
+<script>
+    var mybutton = document.getElementById("myBtn");
 
-<div class='navbar'>
+    window.onscroll = function() {scrollFunction()};
 
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+<div class="navbar">
     <%= link_to root_url do %>
         <%= image_tag("/images/logo.jpg", :size => "120x100")%>
     <% end %>
 
-    <button><%= "Should link_to login" %></button>
-    
+    <div style="float: right">
+        <% if !@logged_in %>
+            <button><%= "Login" %></button>
+            <button><%= "Register" %></button>
+        <% else %>
+            <div><%= @greeting %> <%= @username %></div>
+            <button><%= "sign_out" %></button>
+        <% end %>
+        <button><%= "Contact Us" %></button>
+    </div>
+
 </div>
+
+<%= image_tag("/images/homeImage.jpg", style: "width:100%; height:auto; text-align: center;")%>
+
+<div style="padding: 30px 0;">
+    <div class="columns" style="margin: 0 300px; display: flex;">
+        <div class="column" style="margin: 0 10px; width: 250px;"> 
+            <h3 style="margin-bottom: 30px;">Products</h3>
+            <p>Current Accounts</p>
+            <p>Savings</p>
+            <p>Credit Cards</p>
+            <p>Loans</p>
+            <p>Mortgages</p>
+            <p>Insurance</p>
+            <p>Overdrafts</p>
+        </div>
+        
+        <div class="column" style="margin: 0 10px; width: 250px;">
+            <h3 style="margin-bottom: 30px;">Help and Support</h3>
+            <p>Contact us</p>
+            <p>FAQs</p>
+            <p>Switch to Bank</p>
+            <p>Protect your money</p>
+            <p>Help with bereavement</p>
+        </div>
+        
+        <div class="column" style="margin: 0 10px; width: 250px;">
+            <h3 style="margin-bottom: 30px;">Important Notices</h3>
+            <p>Coronavirus(COVID-19)</p>
+            <p>Accessibility</p>
+            <p>Privacy Policy</p>
+        </div>
+    </div>
+</div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
