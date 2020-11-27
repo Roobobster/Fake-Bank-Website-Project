@@ -41,7 +41,11 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     arel (8.0.0)
+    bcrypt (3.1.16)
     bindex (0.8.1)
+    bootstrap_form (4.4.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     builder (3.2.4)
     byebug (11.0.1)
     capybara (2.18.0)
@@ -63,6 +67,7 @@ GEM
     crass (1.0.6)
     erubi (1.10.0)
     execjs (2.7.0)
+    ffi (1.13.1)
     ffi (1.13.1-x86-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -80,8 +85,11 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.2)
     nio4r (2.5.2)
+    nokogiri (1.10.10)
+      mini_portile2 (~> 2.4.0)
     nokogiri (1.10.10-x86-mingw32)
       mini_portile2 (~> 2.4.0)
+    pg (1.2.3)
     pg (1.2.3-x86-mingw32)
     public_suffix (4.0.6)
     puma (3.12.6)
@@ -161,9 +169,12 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
+  bcrypt
+  bootstrap_form (~> 4.0)
   byebug
   capybara (>= 2.15)
   coffee-rails (~> 4.2)
@@ -179,4 +190,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.15.3
+   1.17.2

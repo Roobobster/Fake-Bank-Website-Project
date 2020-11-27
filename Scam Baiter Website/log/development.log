@@ -129,3 +129,557 @@ Migrating to CreateProfiles (20201123151610)
   [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(6104457663152979165)[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (21.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6104457663152979165)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAccounts (20201123135122)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "accounts" ("id" bigserial primary key, "profiles_id" bigint, "type" character varying, "amount" float, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_accounts_on_profiles_id" ON "accounts"  ("profiles_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201123135122"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTransactions (20201123140135)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "transactions" ("id" bigserial primary key, "subjects_id" bigint, "transaction_datetime" timestamp, "amount" float, "message" text, "recipient" character varying, "payee" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_transactions_on_subjects_id" ON "transactions"  ("subjects_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201123140135"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateProfiles (20201123151610)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "profiles" ("id" bigserial primary key, "email" character varying, "password" character varying, "address" character varying, "telephone" character varying, "first_name" character varying, "last_name" character varying, "age" integer, "gender" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201123151610"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-11-26 17:36:47.101068"], ["updated_at", "2020-11-26 17:36:47.101068"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6104457663152979165)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-11-26 19:37:19 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-26 19:40:45 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 10ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile" for ::1 at 2020-11-26 19:40:54 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/profile"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/profile/view" for ::1 at 2020-11-26 19:40:59 +0200
+Processing by ProfileController#view as HTML
+  [1m[36mProfile Load (1.1ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."first_name" IS NULL ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "profiles" ("email", "password", "address", "telephone", "first_name", "last_name", "age", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["email", "robhealless@gmail.com"], ["password", "password"], ["address", "4 Something lane"], ["telephone", "44568487473985"], ["first_name", "Robert"], ["last_name", "Healless"], ["age", 20], ["gender", "Male"], ["created_at", "2020-11-26 17:40:59.814862"], ["updated_at", "2020-11-26 17:40:59.814862"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."first_name" IS NULL ORDER BY "profiles"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering profile/view.html.erb
+  Rendered profile/view.html.erb (3.2ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 13.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+     8: <%end%>
+     9: <br/>
+    10: <br/>
+    11: <%= 'Name: ' + @robertUser.first_name + ' ' + @robertUser.last_name%>
+    12: <br/>
+    13: <%= 'Email: ' + @robertUser.email %>
+    14: <br/>
+  
+app/views/profile/view.html.erb:11:in `_app_views_profile_view_html_erb___1110241059327556405_70344192725120'
+Started GET "/profile/view?first_name=Robert" for ::1 at 2020-11-26 19:41:20 +0200
+Processing by ProfileController#view as HTML
+  Parameters: {"first_name"=>"Robert"}
+  [1m[36mProfile Load (0.9ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."first_name" = $1 ORDER BY "profiles"."id" ASC LIMIT $2[0m  [["first_name", "Robert"], ["LIMIT", 1]]
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."first_name" = $1 ORDER BY "profiles"."id" ASC LIMIT $2[0m  [["first_name", "Robert"], ["LIMIT", 1]]
+  Rendering profile/view.html.erb
+  Rendered profile/view.html.erb (0.8ms)
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.9ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6104457663152979165)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20201126175113)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201126175113"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6104457663152979165)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "papa_jeroen"], ["password_digest", "$2a$12$F2EBAAc4eJrB9K49SDe5FuIBZjLEz3dRrItBLulEt9kKSnA7B7l0m"], ["created_at", "2020-11-26 18:03:24.504833"], ["updated_at", "2020-11-26 18:03:24.504833"]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-11-27 18:06:34 +0200
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-11-27 18:06:39 +0200
+  
+ActionController::RoutingError (uninitialized constant SessionController):
+  
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:269:in `const_get'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:269:in `block in constantize'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:267:in `each'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:267:in `inject'
+activesupport (5.1.7) lib/active_support/inflector/methods.rb:267:in `constantize'
+actionpack (5.1.7) lib/action_dispatch/http/request.rb:85:in `controller_class_for'
+actionpack (5.1.7) lib/action_dispatch/http/request.rb:78:in `controller_class'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:43:in `controller'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:29:in `serve'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.7) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.7) lib/action_dispatch/routing/route_set.rb:844:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.7) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.7) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.7) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2020-11-27 18:09:12 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-11-27 18:09:18 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/views/sessions/new.html.erb:4: syntax error, unexpected ':'
+...uffer.append=(f.password_field: password );@output_buffer.sa...
+...                              ^):
+  
+app/views/sessions/new.html.erb:4: syntax error, unexpected ':'
+Started GET "/" for ::1 at 2020-11-27 18:18:00 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-11-27 18:18:04 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/views/sessions/new.html.erb:2: syntax error, unexpected ')', expecting =>
+...(url:login_path,scope::session) do |f| @output_buffer.safe_a...
+...                              ^
+/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/views/sessions/new.html.erb:4: syntax error, unexpected ':'
+...fer.append=( f.password_field : password );@output_buffer.sa...
+...                              ^
+/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/views/sessions/new.html.erb:9: syntax error, unexpected ensure, expecting end-of-input
+          ensure
+          ^~~~~~):
+  
+app/views/sessions/new.html.erb:2: syntax error, unexpected ')', expecting =>
+app/views/sessions/new.html.erb:4: syntax error, unexpected ':'
+app/views/sessions/new.html.erb:9: syntax error, unexpected ensure, expecting end-of-input
+Started GET "/" for ::1 at 2020-11-27 18:19:17 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.2ms)
+Completed 200 OK in 11ms (Views: 6.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-11-27 18:19:21 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/views/sessions/new.html.erb:4: syntax error, unexpected ':'
+...fer.append=( f.password_field : password );@output_buffer.sa...
+...                              ^):
+  
+app/views/sessions/new.html.erb:4: syntax error, unexpected ':'
+Started POST "/__web_console/repl_sessions/25225c582bcc46bc963742fba2690bfc/trace" for ::1 at 2020-11-27 18:19:30 +0200
+Started GET "/" for ::1 at 2020-11-27 18:27:17 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 11ms (Views: 6.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-11-27 18:27:21 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/views/sessions/new.html.erb:4: syntax error, unexpected ':'
+...fer.append=( f.password_field : password );@output_buffer.sa...
+...                              ^):
+  
+app/views/sessions/new.html.erb:4: syntax error, unexpected ':'
+Started POST "/__web_console/repl_sessions/6f85e8505c7ef692d866d05f29f318fc/trace" for ::1 at 2020-11-27 18:27:39 +0200
+Started GET "/" for ::1 at 2020-11-27 18:30:00 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-11-27 18:30:06 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/views/sessions/new.html.erb:4: syntax error, unexpected ':'
+...ffer.append=(f.password_field : password );@output_buffer.sa...
+...                              ^):
+  
+app/views/sessions/new.html.erb:4: syntax error, unexpected ':'
+Started GET "/" for ::1 at 2020-11-27 18:35:08 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-11-27 18:35:13 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (166.6ms)
+Completed 500 Internal Server Error in 170ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `bootstrap_form_with' for #<#<Class:0x00007fbb8427b568>:0x00007fbb842799c0>):
+    1: <h1>Login</h1>
+    2: <%=bootstrap_form_with(url:login_path, scope: :session) do |f| %>
+    3:     <%=f.text_field :username %>
+    4:     <%=f.password_field :password %>
+    5:     <%=f.submit "Log in", class: 'btn btn-primary' %> 
+  
+app/views/sessions/new.html.erb:2:in `_app_views_sessions_new_html_erb__4093673642978830842_70221676404340'
+Started GET "/" for ::1 at 2020-11-27 18:36:14 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 9ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-11-27 18:36:19 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (8.9ms)
+Completed 500 Internal Server Error in 177ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (require_tree argument must be a directory):
+    4:     <title>ScamBaiterWebsite</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/cable.js:6
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___112618738522489308_70294917421320'
+Started GET "/" for ::1 at 2020-11-27 18:42:40 +0200
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.3ms)
+Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-11-27 18:42:45 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (56.6ms)
+Completed 500 Internal Server Error in 246ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (require_tree argument must be a directory):
+    4:     <title>ScamBaiterWebsite</title>
+    5:     <%= csrf_meta_tags %>
+    6: 
+    7:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    8:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    9:   </head>
+   10: 
+  
+app/assets/javascripts/cable.js:6
+app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb___2747530926780300787_70327514686060'
+Started POST "/__web_console/repl_sessions/14459e42f570ac70c774200e68efb14d/trace" for ::1 at 2020-11-27 18:43:47 +0200
+Started POST "/__web_console/repl_sessions/14459e42f570ac70c774200e68efb14d/trace" for ::1 at 2020-11-27 18:43:55 +0200
+Started POST "/__web_console/repl_sessions/14459e42f570ac70c774200e68efb14d/trace" for ::1 at 2020-11-27 18:44:17 +0200
+Started POST "/__web_console/repl_sessions/14459e42f570ac70c774200e68efb14d/trace" for ::1 at 2020-11-27 18:44:18 +0200
+Started POST "/__web_console/repl_sessions/14459e42f570ac70c774200e68efb14d/trace" for ::1 at 2020-11-27 18:44:52 +0200
+Started GET "/" for ::1 at 2020-11-27 18:54:20 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.4ms)
+Completed 200 OK in 10ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-11-27 18:54:25 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 816ms (Views: 815.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-11-27 18:55:26 +0200
+Processing by SessionsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L5V2loZqfovDH9N/3NxZ1xy1Ocj2e2OTnv847o1gSzYM3gfBAMBjeo/G4GI5o4Nqrq8Ec4mpCuoSh9xhdIk4xw==", "session"=>{"username"=>"papa_jeroen", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-11-27 18:56:02 +0200
+Processing by SessionsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L5V2loZqfovDH9N/3NxZ1xy1Ocj2e2OTnv847o1gSzYM3gfBAMBjeo/G4GI5o4Nqrq8Ec4mpCuoSh9xhdIk4xw==", "session"=>{"username"=>"papa_jeroen", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-11-27 18:56:11 +0200
+Processing by SessionsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L5V2loZqfovDH9N/3NxZ1xy1Ocj2e2OTnv847o1gSzYM3gfBAMBjeo/G4GI5o4Nqrq8Ec4mpCuoSh9xhdIk4xw==", "session"=>{"username"=>"papa_jeroen", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 21ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-11-27 18:56:12 +0200
+Processing by SessionsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L5V2loZqfovDH9N/3NxZ1xy1Ocj2e2OTnv847o1gSzYM3gfBAMBjeo/G4GI5o4Nqrq8Ec4mpCuoSh9xhdIk4xw==", "session"=>{"username"=>"papa_jeroen", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 19ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-11-27 18:56:12 +0200
+Processing by SessionsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L5V2loZqfovDH9N/3NxZ1xy1Ocj2e2OTnv847o1gSzYM3gfBAMBjeo/G4GI5o4Nqrq8Ec4mpCuoSh9xhdIk4xw==", "session"=>{"username"=>"papa_jeroen", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 23ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-11-27 18:56:12 +0200
+Processing by SessionsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L5V2loZqfovDH9N/3NxZ1xy1Ocj2e2OTnv847o1gSzYM3gfBAMBjeo/G4GI5o4Nqrq8Ec4mpCuoSh9xhdIk4xw==", "session"=>{"username"=>"papa_jeroen", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 67ms (Views: 66.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 18:57:52 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.1ms)
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-11-27 18:57:56 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (46.7ms)
+Completed 200 OK in 259ms (Views: 258.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-27 19:17:15 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.6ms)
+Completed 200 OK in 10ms (Views: 5.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-11-27 19:17:20 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (45.7ms)
+Completed 200 OK in 267ms (Views: 266.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for ::1 at 2020-11-27 19:17:27 +0200
+Processing by SessionsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NtyKJcNR67UIpWXfXf4q4B47v6yZRpJZtb7LHE0DJLIVl/tyRfv2RER8VsK4gfBdrCGCF+aU+yA5xi+TtOpXQw==", "session"=>{"username"=>"papa_jeroen", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/models/user.rb:3: syntax error, unexpected ':', expecting end
+    validates : username, presence: true,
+              ^
+/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/models/user.rb:3: Can't assign to true
+...ates : username, presence: true,
+...                           ^~~~
+/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/models/user.rb:5: syntax error, unexpected ':', expecting end
+...                    uniqueness: {case_sensitive : false}
+...                              ^):
+  
+app/models/user.rb:3: syntax error, unexpected ':', expecting end
+app/models/user.rb:3: Can't assign to true
+app/models/user.rb:5: syntax error, unexpected ':', expecting end
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for ::1 at 2020-11-27 19:17:28 +0200
+Processing by SessionsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NtyKJcNR67UIpWXfXf4q4B47v6yZRpJZtb7LHE0DJLIVl/tyRfv2RER8VsK4gfBdrCGCF+aU+yA5xi+TtOpXQw==", "session"=>{"username"=>"papa_jeroen", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/models/user.rb:3: syntax error, unexpected ':', expecting end
+    validates : username, presence: true,
+              ^
+/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/models/user.rb:3: Can't assign to true
+...ates : username, presence: true,
+...                           ^~~~
+/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/models/user.rb:5: syntax error, unexpected ':', expecting end
+...                    uniqueness: {case_sensitive : false}
+...                              ^):
+  
+app/models/user.rb:3: syntax error, unexpected ':', expecting end
+app/models/user.rb:3: Can't assign to true
+app/models/user.rb:5: syntax error, unexpected ':', expecting end
+app/controllers/sessions_controller.rb:9:in `create'
+Started POST "/login" for ::1 at 2020-11-27 19:17:29 +0200
+Processing by SessionsController#create as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NtyKJcNR67UIpWXfXf4q4B47v6yZRpJZtb7LHE0DJLIVl/tyRfv2RER8VsK4gfBdrCGCF+aU+yA5xi+TtOpXQw==", "session"=>{"username"=>"papa_jeroen", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/models/user.rb:3: syntax error, unexpected ':', expecting end
+    validates : username, presence: true,
+              ^
+/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/models/user.rb:3: Can't assign to true
+...ates : username, presence: true,
+...                           ^~~~
+/Users/andreicinca/5CCS2SEG/Team-Fox/Scam Baiter Website/app/models/user.rb:5: syntax error, unexpected ':', expecting end
+...                    uniqueness: {case_sensitive : false}
+...                              ^):
+  
+app/models/user.rb:3: syntax error, unexpected ':', expecting end
+app/models/user.rb:3: Can't assign to true
+app/models/user.rb:5: syntax error, unexpected ':', expecting end
+app/controllers/sessions_controller.rb:9:in `create'
+Started GET "/" for ::1 at 2020-11-27 19:25:21 +0200
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/andreicinca/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/railties-5.1.7/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 13ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-11-27 19:25:26 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (50.4ms)
+Completed 200 OK in 261ms (Views: 258.3ms | ActiveRecord: 0.0ms)
+
+
