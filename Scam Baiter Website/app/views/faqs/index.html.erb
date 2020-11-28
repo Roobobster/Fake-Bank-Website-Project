@@ -1,0 +1,100 @@
+<h1>FAQs</h1>
+<div class="questions">
+    <button class="question">I don't recognise this transaction</button>
+    <div class="answer">
+        <p>
+            <p>If you don’t recognise this transaction, it could be because:</p>
+            <ul>
+                <li>A retailer uses a different name when it takes money from your account</li>
+                <li>A joint account – another account holder may have made this transaction</li>
+            </ul>
+            <br/>
+            <p>If you think a transaction is fraudulent, please <%= link_to "contact us", {:controller => "contact", :action => "index"} %> to report this.</p>
+        </p>
+    </div>
+</div>
+<div class="questions">
+    <button class="question">How do I change my card PIN?</button>
+    <div class="answer">
+        <p>
+            <p>You can choose your own PIN at any Bank cash machine</p>
+            <ol>
+                <li>Put in your card and enter your current PIN</li>
+                <li>Select 'PIN services' from the main screen</li>
+                <li>Choose 'Select a new PIN'</li>
+                <li>Enter the new PIN you’d like to use</li>
+            </ol>
+            <br/>
+            <p>If you’ve forgotten your PIN, please <%= link_to "contact us", {:controller => "contact", :action => "index"} %> to get a temporary PIN.</p>
+        </p>
+    </div>
+</div>
+<div class="questions">
+    <button class="question">What are IBANs and SWIFT codes?</button>
+    <div class="answer">
+        <p>IBAN stands for International Bank Account Number, which you can use when making or receiving international payments.</p>
+        <p>A SWIFT code is used to identify a specific bank during an international transaction.</p>
+        <br/>
+        <p>Please <%= link_to "contact us", {:controller => "contact", :action => "index"} %> to generate these codes.</p>
+    </div>
+</div>
+<p>Still have a question? Please do not hesitate to <%= link_to "contact us", {:controller => "contact", :action => "index"} %></p>
+
+<script>
+    var coll = document.getElementsByClassName("question");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight){
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            } 
+        });
+    }
+</script>
+
+<style>
+.questions {
+  width: 80%;
+}
+
+.question {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .question:hover {
+  background-color: #555;
+}
+
+.question:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.answer {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+</style>

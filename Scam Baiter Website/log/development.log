@@ -5528,3 +5528,483 @@ puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
 puma (3.12.6) lib/puma/server.rb:476:in `process_client'
 puma (3.12.6) lib/puma/server.rb:334:in `block in run'
 puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:01:51 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/faqs/index"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/home/index" for ::1 at 2020-11-28 13:01:55 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.1ms)
+Completed 200 OK in 8ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-28 13:01:56 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.0ms)
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact/index" for ::1 at 2020-11-28 13:01:59 +0000
+Processing by ContactController#index as HTML
+  Rendering contact/index.html.erb within layouts/application
+  Rendered contact/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 40ms (Views: 36.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/profile/view?first_name=Robert" for ::1 at 2020-11-28 13:02:11 +0000
+Processing by ProfileController#view as HTML
+  Parameters: {"first_name"=>"Robert"}
+  [1m[36mProfile Load (0.9ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."first_name" = $1 ORDER BY "profiles"."id" ASC LIMIT $2[0m  [["first_name", "Robert"], ["LIMIT", 1]]
+  [1m[36mCACHE Profile Load (0.0ms)[0m  [1m[34mSELECT  "profiles".* FROM "profiles" WHERE "profiles"."first_name" = $1 ORDER BY "profiles"."id" ASC LIMIT $2[0m  [["first_name", "Robert"], ["LIMIT", 1]]
+  Rendering profile/view.html.erb
+  Rendered profile/view.html.erb (1.4ms)
+Completed 200 OK in 58ms (Views: 7.5ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/faq/index" for ::1 at 2020-11-28 13:02:59 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/faq/index"):
+  
+actionpack (5.1.7) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.7) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.7) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.1.7) lib/rails/engine.rb:522:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:03:05 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 70ms (Views: 67.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-28 13:03:37 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.1ms)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:03:46 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 37ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:04:08 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:04:29 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 27.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:21:48 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 42ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:22:57 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:24:23 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 39ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:24:42 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:26:34 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 30ms (Views: 26.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:28:17 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/faqs/index.html.erb:20: syntax error, unexpected '{', expecting ')'
+...ppend=( link_to "contact us." {:controller => contact, :acti...
+...                              ^
+/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/faqs/index.html.erb:20: syntax error, unexpected =>, expecting &. or :: or '[' or '.'
+...ntroller => contact, :action => index} );@output_buffer.safe...
+...                             ^~
+/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/faqs/index.html.erb:81: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/zhengwenyu/Documents/Computer Science KCL/Year2/SEG/Team-Fox-SGP/Scam Baiter Website/app/views/faqs/index.html.erb:83: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/faqs/index.html.erb:20: syntax error, unexpected '{', expecting ')'
+app/views/faqs/index.html.erb:20: syntax error, unexpected =>, expecting &. or :: or '[' or '.'
+app/views/faqs/index.html.erb:81: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/faqs/index.html.erb:83: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:28:27 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (526.8ms)
+Completed 500 Internal Server Error in 545ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `contact' for #<#<Class:0x00007fef25ed15e0>:0x00007fef26bba360>
+Did you mean?  concat):
+    17:     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    18:     </div>
+    19: </div>
+    20: <p>If you have any furthrt queries, please do not hesitate to <%= link_to "contact us.", {:controller => contact, :action => index} %></p>
+    21: 
+    22: <script>
+    23:     var coll = document.getElementsByClassName("question");
+  
+app/views/faqs/index.html.erb:20:in `_app_views_faqs_index_html_erb___2152172571014172656_70332561873980'
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:28:58 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 41ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact/index" for ::1 at 2020-11-28 13:29:00 +0000
+Processing by ContactController#index as HTML
+  Rendering contact/index.html.erb within layouts/application
+  Rendered contact/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 52ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:29:57 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 56ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:30:04 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 34ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:34:41 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:35:17 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:35:36 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 35ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:35:41 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 44ms (Views: 40.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:36:51 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:37:07 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:37:15 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:37:30 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 50ms (Views: 47.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:38:12 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:38:26 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:39:05 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:39:18 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 32ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:39:28 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 30ms (Views: 27.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:42:11 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:42:33 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:42:53 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 35ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:43:03 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 39ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:45:00 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 36ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:50:02 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 37ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:50:37 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:51:32 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:51:44 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 35ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:52:30 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:52:37 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:54:50 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 30ms (Views: 26.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:58:15 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:58:29 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 29ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-28 13:59:05 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.1ms)
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-28 13:59:32 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.4ms)
+Completed 200 OK in 9ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/contact/index" for ::1 at 2020-11-28 13:59:33 +0000
+Processing by ContactController#index as HTML
+  Rendering contact/index.html.erb within layouts/application
+  Rendered contact/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-28 13:59:53 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.3ms)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/faqs/index" for ::1 at 2020-11-28 13:59:57 +0000
+Processing by FaqsController#index as HTML
+  Rendering faqs/index.html.erb within layouts/application
+  Rendered faqs/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 31ms (Views: 28.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-28 14:00:08 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (2.1ms)
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-28 14:00:37 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.1ms)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-11-28 14:01:08 +0000
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb
+  Rendered home/index.html.erb (1.9ms)
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+

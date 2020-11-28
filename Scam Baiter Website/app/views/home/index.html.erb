@@ -78,7 +78,7 @@
             <%= image_tag("/images/logo.jpg", :size => "120x100")%>
         <% end %>
 
-        <li><%= link_to "Contact Us", {:controller => "contact", :action => "index"} %></li>
+        <li><%= link_to "Contact us", {:controller => "contact", :action => "index"} %></li>
 
         <% if !@logged_in %>
             <li><%= "Register" %></li>
@@ -109,8 +109,8 @@
         
         <div class="column">
             <h3>Help and Support</h3>
-            <p>Contact us</p>
-            <p>FAQs</p>
+            <p><%= link_to "Contact us", {:controller => "contact", :action => "index"} %></p>
+            <p><%= link_to "FAQs", {:controller => "faqs", :action => "index"} %></p>
             <p>Switch to Bank</p>
             <p>Protect your money</p>
             <p>Help with bereavement</p>
