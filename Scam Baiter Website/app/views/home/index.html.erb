@@ -17,22 +17,75 @@
     }
 </script>
 
+<style>
+    #myBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+    }
+
+    #myBtn:hover {
+        background-color: #555;
+    }
+
+    .columns {
+        margin: 0 300px; 
+        display: flex;
+    }
+
+    .column {
+        margin: 0 10px; 
+        width: 300px;
+    }
+
+    .column h3 {
+        margin-bottom: 30px;
+    }
+
+    .navbar ul {
+        list-style-type: none; 
+        margin: 0; 
+        padding: 0; 
+        overflow: hidden;
+    }
+
+    .navbar li {
+        float: right; 
+        display: block; 
+        color: black; 
+        text-align: center; 
+        padding: 14px 16px; 
+        text-decoration: none;
+        border-radius: 25px;
+    }  
+
+</style>
+
 <div class="navbar">
 
-    <ul style="list-style-type: none; margin: 0; padding: 0; overflow: hidden;">
+    <ul>
 
         <%= link_to root_url do %>
             <%= image_tag("/images/logo.jpg", :size => "120x100")%>
         <% end %>
 
-        <li style="float: right; display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;"><%= "Contact Us" %></li>
+        <li><%= link_to "Contact Us", {:controller => "contact", :action => "index"} %></li>
 
         <% if !@logged_in %>
-            <li style="float: right; display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;"><%= "Register" %></li>
-            <li style="float: right; display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;"><%= "Login" %></li>
+            <li><%= "Register" %></li>
+            <li><%= "Login" %></li>
         <% else %>
-            <li style="float: right; display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;"><%= "Sign Out" %></li>
-            <div style="float: right; display: block; color: black; text-align: center; padding: 14px 16px; text-decoration: none;"><%= @greeting %>, <%= @username %></div>
+            <li><%= "Sign Out" %></li>
+            <li><%= @greeting %>, <%= @username %></li>
         <% end %>
 
     </ul>
@@ -42,9 +95,9 @@
 <%= image_tag("/images/homeImage.jpg", style: "width:100%; height:auto; text-align: center;")%>
 
 <div style="padding: 30px 0;">
-    <div class="columns" style="margin: 0 300px; display: flex;">
-        <div class="column" style="margin: 0 10px; width: 250px;"> 
-            <h3 style="margin-bottom: 30px;">Products</h3>
+    <div class="columns">
+        <div class="column"> 
+            <h3>Products</h3>
             <p>Current Accounts</p>
             <p>Savings</p>
             <p>Credit Cards</p>
@@ -54,8 +107,8 @@
             <p>Overdrafts</p>
         </div>
         
-        <div class="column" style="margin: 0 10px; width: 250px;">
-            <h3 style="margin-bottom: 30px;">Help and Support</h3>
+        <div class="column">
+            <h3>Help and Support</h3>
             <p>Contact us</p>
             <p>FAQs</p>
             <p>Switch to Bank</p>
@@ -63,9 +116,9 @@
             <p>Help with bereavement</p>
         </div>
         
-        <div class="column" style="margin: 0 10px; width: 250px;">
-            <h3 style="margin-bottom: 30px;">Important Notices</h3>
-            <p>Coronavirus(COVID-19)</p>
+        <div class="column">
+            <h3>Important Notices</h3>
+            <p>Coronavirus (COVID-19)</p>
             <p>Accessibility</p>
             <p>Privacy Policy</p>
         </div>
