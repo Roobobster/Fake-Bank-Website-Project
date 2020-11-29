@@ -1,6 +1,4 @@
 class SessionsController < ApplicationController
-
-
   def new
   end
 
@@ -17,6 +15,8 @@ class SessionsController < ApplicationController
 
 
   def destroy
+    log_out
+    redirect_to profile_view_path
   end
 
 end
