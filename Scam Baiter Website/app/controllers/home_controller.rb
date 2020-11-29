@@ -1,7 +1,5 @@
 class HomeController < ApplicationController
 
-  layout false
-
   def generateGreeting
     current_time = Time.now.to_i
     midnight = Time.now.beginning_of_day.to_i
