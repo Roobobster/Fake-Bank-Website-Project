@@ -1470,3 +1470,22 @@ Processing by SessionsController#new as HTML
 Completed 200 OK in 11ms (Views: 10.7ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/login" for ::1 at 2020-11-29 10:43:11 +0000
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 1861ms (Views: 1855.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for ::1 at 2020-11-29 10:59:24 +0000
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 136ms (Views: 128.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[35m (5.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
