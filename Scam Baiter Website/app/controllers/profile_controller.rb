@@ -5,8 +5,9 @@ class ProfileController < ApplicationController
     if(profile == nil)
       profile = Profile.new
       #For creating users for later
+     
+      profile.username= 'jeroen_my_heroin'
       profile.email = 'robhealless@gmail.com'
-      profile.username='jeroen_my_heroin'
       profile.password = 'foobar'
       profile.address = '4 Something lane'
       profile.telephone = '44568487473985'
