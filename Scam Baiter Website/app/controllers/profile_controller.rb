@@ -6,7 +6,8 @@ class ProfileController < ApplicationController
       profile = Profile.new
       #For creating users for later
       profile.email = 'robhealless@gmail.com'
-      profile.password = 'password'
+      profile.username='jeroen_my_heroin'
+      profile.password = 'foobar'
       profile.address = '4 Something lane'
       profile.telephone = '44568487473985'
       profile.first_name = 'Robert'
