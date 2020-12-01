@@ -24,7 +24,8 @@ ActiveRecord::Schema.define(version: 20201126175113) do
     t.index ["profiles_id"], name: "index_accounts_on_profiles_id"
   end
 
-  create_table "profiles", force: :cascade do |t|
+  create_table "profiles", id: false, force: :cascade do |t|
+    t.string "username"
     t.string "email"
     t.string "password"
     t.string "address"

@@ -1,0 +1,53 @@
+// Place all the styles related to the Home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    background-color: rgba(182, 182, 182, 0.835);
+    color: white;
+    padding: 13px;
+    border-radius: 10px;
+}
+
+#backToTopBtn:hover {
+    background-color: #555;
+}
+
+.columns {
+    margin: 0 300px; 
+    display: flex;
+}
+
+.column {
+    margin: 0 10px; 
+    width: 300px;
+}
+
+.column h3 {
+    margin-bottom: 30px;
+}
+
+.navbar ul {
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    overflow: hidden;
+}
+
+.navbar li {
+    float: right; 
+    display: block; 
+    color: black; 
+    text-align: center; 
+    padding: 14px 16px; 
+    text-decoration: none;
+    border-radius: 25px;
+}  
