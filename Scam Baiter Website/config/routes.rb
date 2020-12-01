@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'faqs/index'
+
+  root 'home#index'
+
+  get 'home/index'
+
+  get 'contact/index'
+
   get 'profile/view'
 
   get '/login', to: 'sessions#new'
