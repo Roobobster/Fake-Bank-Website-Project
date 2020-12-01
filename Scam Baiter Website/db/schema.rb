@@ -24,20 +24,8 @@ ActiveRecord::Schema.define(version: 20201123151610) do
     t.index ["profiles_id"], name: "index_accounts_on_profiles_id"
   end
 
-  create_table "profile", force: :cascade do |t|
-    t.string "email"
-    t.string "password"
-    t.string "address"
-    t.string "telephone"
-    t.string "first_name"
-    t.string "last_name"
-    t.integer "age"
-    t.string "gender"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "profiles", force: :cascade do |t|
+  create_table "profiles", id: false, force: :cascade do |t|
+    t.string "username"
     t.string "email"
     t.string "password"
     t.string "address"
@@ -51,7 +39,7 @@ ActiveRecord::Schema.define(version: 20201123151610) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.bigint "subjects_id"
+    t.bigint "accounts_id"
     t.datetime "transaction_datetime"
     t.float "amount"
     t.text "message"
@@ -59,7 +47,7 @@ ActiveRecord::Schema.define(version: 20201123151610) do
     t.string "payee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["subjects_id"], name: "index_transactions_on_subjects_id"
+    t.index ["accounts_id"], name: "index_transactions_on_accounts_id"
   end
 
 end
