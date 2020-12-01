@@ -20,8 +20,8 @@ class HomeController < ApplicationController
 
   def index
     generateGreeting
-    @logged_in = true;
-    @username = "Wenyu";
+    @logged_in = true; #Detect if the user is logged in
+    @username = "Wenyu"; #Should be the name of the account holder once logged in.
   end
 
 end
