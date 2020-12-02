@@ -5,18 +5,19 @@ class SessionsController < ApplicationController
 
   def create
     user=Profile.find_by(username: params[:session][:username].downcase)
-    if user && user.authenticate(params[:session][:password])
+    status=Profile.find_by(admin: params[:session][:admin])
+    if user && user.authenticate(params[:session][:password]) && user.admin==true
       log_in(user)
-      redirect_to('http://localhost:3000/profile/view?first_name=Robert')
+      redirect_to('http://localhost:3000')
     else
-      render 'new'
+      redirect_to('http://localhost:3000/profile/view?first_name=Robert')
     end
   end
 
 
   def destroy
     log_out
-    redirect_to profile_view_path
+    redirect_to('http://localhost:3000/profile/view?first_name=Robert')
   end
 
 end
