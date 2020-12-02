@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20201126175113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 0) do
     t.index ["profiles_id"], name: "index_accounts_on_profiles_id"
   end
 
-  create_table "profiles", id: false, force: :cascade do |t|
+  create_table "profiles", force: :cascade do |t|
     t.string "username"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.string "address"
     t.string "telephone"
     t.string "first_name"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 0) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.bigint "subjects_id"
+    t.bigint "accounts_id"
     t.datetime "transaction_datetime"
     t.float "amount"
     t.text "message"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "payee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["subjects_id"], name: "index_transactions_on_subjects_id"
+    t.index ["accounts_id"], name: "index_transactions_on_accounts_id"
   end
 
   create_table "users", force: :cascade do |t|
