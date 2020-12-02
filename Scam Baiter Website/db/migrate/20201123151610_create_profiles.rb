@@ -3,7 +3,7 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
     create_table :profiles do |t|
       t.string :username
       t.string :email
-      t.string :password
+      t.string :password_digest
       t.string :address
       t.string :telephone
       t.string :first_name

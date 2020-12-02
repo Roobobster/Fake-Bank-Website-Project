@@ -41,7 +41,11 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     arel (8.0.0)
+    bcrypt (3.1.16)
     bindex (0.8.1)
+    bootstrap_form (4.4.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     builder (3.2.4)
     byebug (11.0.1)
     capybara (2.18.0)
@@ -173,6 +177,8 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bcrypt
+  bootstrap_form (~> 4.0)
   byebug
   capybara (>= 2.15)
   coffee-rails (~> 4.2)
@@ -189,4 +195,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.6
+   2.1.4

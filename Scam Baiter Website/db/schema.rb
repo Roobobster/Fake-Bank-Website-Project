@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201123151610) do
+ActiveRecord::Schema.define(version: 20201126175113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,11 +24,10 @@ ActiveRecord::Schema.define(version: 20201123151610) do
     t.index ["profiles_id"], name: "index_accounts_on_profiles_id"
   end
 
-
-  create_table "profiles", id: false, force: :cascade do |t|
+  create_table "profiles", force: :cascade do |t|
     t.string "username"
     t.string "email"
-    t.string "password"
+    t.string "password_digest"
     t.string "address"
     t.string "telephone"
     t.string "first_name"
