@@ -1,18 +1,19 @@
+<% @username=current_user.username %>
 <div class="navbar">
 
     <ul>
-
+   
         <%= link_to root_url do %>
             <%= image_tag("/images/logo.jpg", :size => "120x100")%>
         <% end %>
 
         <li><%= link_to "Contact us", {:controller => "contact", :action => "index"} %></li>
 
-        <% if !@logged_in %>
+        <% if !logged_in? %>
             <li><%= "Register" %></li>
             <li><%= "Login" %></li>
         <% else %>
-            <li><%= "Sign Out" %></li>
+            <li><%= link_to "Log Out", {:controller=> "sessions",:action => "destroy"} %></li>
             <li><%= @greeting %>, <%= @username %></li>
         <% end %>
 
