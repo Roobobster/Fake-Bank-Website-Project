@@ -10,7 +10,7 @@ class CreateProfiles < ActiveRecord::Migration[5.1]
       t.string :last_name
       t.integer :age
       t.string :gender
-      
+      t.boolean :admin
       t.timestamps
     end
   end

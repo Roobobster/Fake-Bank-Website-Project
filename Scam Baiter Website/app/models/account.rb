@@ -1,4 +1,5 @@
 class Account < ApplicationRecord 
+
     has_many :transactions
     belongs_to :profile
 
@@ -16,9 +17,5 @@ class Account < ApplicationRecord
     def modify_balance(amount_to_modify)
         #This definitely wants more validation checks...
         account_balance = account_balance + amount_to_modify
-    end
-
-    def add_transaction()
-        
     end
 end

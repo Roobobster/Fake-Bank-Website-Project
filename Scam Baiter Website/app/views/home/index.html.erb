@@ -1,19 +1,20 @@
+<p id=notice><%= notice %></p> <!--make prettier later-->
 <div class="navbar">
 
     <ul>
-
+   
         <%= link_to root_url do %>
             <%= image_tag("/images/logo.jpg", :size => "120x100")%>
         <% end %>
 
         <li><%= link_to "Contact us", {:controller => "contact", :action => "index"} %></li>
 
-        <% if !@logged_in %>
+        <% if !logged_in? %>
             <li><%= "Register" %></li>
-            <li><%= "Login" %></li>
+            <li><%= link_to "Login", {:controller=> "sessions",:action => "new"} %></li>
         <% else %>
-            <li><%= "Sign Out" %></li>
-            <li><%= @greeting %>, <%= @username %></li>
+            <li><%= link_to "Log Out", {:controller=> "sessions",:action => "destroy"} %></li>
+            <li><%= @greeting %>, <%= current_user.username %></li>
         <% end %>
 
     </ul>
@@ -26,7 +27,7 @@
     <div class="columns">
         <div class="column"> 
             <h3>Products</h3>
-            <p>Current Accounts</p>
+            <p><%= link_to "Current Accounts", {:controller => "accounts", :action => "index"} %></p>
             <p>Savings</p>
             <p>Credit Cards</p>
             <p>Loans</p>

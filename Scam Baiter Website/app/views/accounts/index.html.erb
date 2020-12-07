@@ -1,0 +1,15 @@
+<h1>Accounts Page</h1>
+<% if @accountlist.any? %>
+    <h2>Your Accounts</h2><hr>
+    <% @accountlist.each do |account| %>
+    <tr>
+        <td><%= "Profile ID: " + account.profiles_id.to_s if account.profiles_id %></td><br>
+        <td><%= "Account Balance: " + account.amount.to_s if account.amount %></td><br>
+        <td><%= "Account Type: " + account.account_type.to_s if account.account_type %></td><br>
+        <td><%= "Account Created: " + account.created_at.to_s if account.created_at %></td><br>
+        <td><%= "Account Updated: " + account.updated_at.to_s if account.updated_at %></td><br>
+    </tr><hr>
+<% end %>
+<% else %>
+    <h2>No accounts. Create one?</h2>
+<% end %>

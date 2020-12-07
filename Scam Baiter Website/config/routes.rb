@@ -8,13 +8,20 @@ Rails.application.routes.draw do
 
   get 'contact/index'
 
-
   resources :profiles
+
+  get 'profile/view'
+ 
+  get "accounts/index", to: "accounts#index", as: "index"
+
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  get '/logout', to: 'sessions#destroy'
 
+  #resources :sessions #, only: [:new, :create, :destroy]  get 'signup', to: 'profile#new', as: 'signup'
+  #get 'login', to: 'sessions#new', as: 'login'
+  #get 'logout', to: 'sessions#destroy', as: 'logout'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
