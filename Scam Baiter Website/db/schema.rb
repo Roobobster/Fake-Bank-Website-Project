@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20201126175113) do
 
   create_table "accounts", force: :cascade do |t|
     t.bigint "profiles_id"
-    t.string "type"
+    t.string "account_type"
     t.float "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

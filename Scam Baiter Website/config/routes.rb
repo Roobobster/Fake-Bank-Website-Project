@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get 'contact/index'
 
   get 'profile/view'
+ 
+  get "accounts/index", to: "accounts#index", as: "index"
+
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
