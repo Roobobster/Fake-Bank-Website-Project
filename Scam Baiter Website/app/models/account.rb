@@ -1,6 +1,6 @@
 class Account < ApplicationRecord 
 
-    has_many :transactions
+    has_many :transactions, dependent: :destroy
     belongs_to :profile
 
     def transfer_balance(sender_account, receiver_account, amount_to_transfer)
