@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'contact/index'
 
+  resources :profiles
+
   get 'profile/view'
  
   get "accounts/index", to: "accounts#index", as: "index"

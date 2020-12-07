@@ -1,4 +1,8 @@
 class Account < ApplicationRecord 
+
+    has_many :transactions
+    belongs_to :profile
+
     def transfer_balance(sender_account, receiver_account, amount_to_transfer)
         if sender_account.get_account_balance() >= amount_to_transfer and amount_to_transfer > 0 # Don't transfer negative balance, don't transfer 0 currency
             sender_account.modify_balance(amount_to_transfer)
