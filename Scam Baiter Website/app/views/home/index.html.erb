@@ -1,4 +1,4 @@
-<% @username=current_user.username %>
+<p id=notice><%= notice %></p> <!--make prettier later-->
 <div class="navbar">
 
     <ul>
@@ -11,10 +11,10 @@
 
         <% if !logged_in? %>
             <li><%= "Register" %></li>
-            <li><%= "Login" %></li>
+            <li><%= link_to "Login", {:controller=> "sessions",:action => "new"} %></li>
         <% else %>
             <li><%= link_to "Log Out", {:controller=> "sessions",:action => "destroy"} %></li>
-            <li><%= @greeting %>, <%= @username %></li>
+            <li><%= @greeting %>, <%= current_user.username %></li>
         <% end %>
 
     </ul>
