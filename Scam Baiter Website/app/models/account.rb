@@ -1,14 +1,6 @@
 class Account < ApplicationRecord 
-    Profile account_profile
-    Number account_balance # Stored in pennies
-    String account_name
-    LinkedList transaction_history
-
-    def initialize(parameter_list)
-        @account_profile = parameter_list[0]
-        @account_balance = parameter_list[1]
-        @transaction_history = parameter_list[2]
-    end
+    has_many :transactions
+    belongs_to :profile
 
     def transfer_balance(sender_account, receiver_account, amount_to_transfer)
         if sender_account.get_account_balance() >= amount_to_transfer and amount_to_transfer > 0 # Don't transfer negative balance, don't transfer 0 currency

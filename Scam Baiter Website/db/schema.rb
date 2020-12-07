@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201126175113) do
+ActiveRecord::Schema.define(version: 20201123151610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "accounts", force: :cascade do |t|
-    t.bigint "profiles_id"
-    t.string "type"
+    t.bigint "profile_id"
+    t.string "account_type"
     t.float "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["profiles_id"], name: "index_accounts_on_profiles_id"
+    t.index ["profile_id"], name: "index_accounts_on_profile_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20201126175113) do
   end
 
   create_table "transactions", force: :cascade do |t|
-    t.bigint "accounts_id"
+    t.bigint "account_id"
     t.datetime "transaction_datetime"
     t.float "amount"
     t.text "message"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20201126175113) do
     t.string "payee"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["accounts_id"], name: "index_transactions_on_accounts_id"
+    t.index ["account_id"], name: "index_transactions_on_account_id"
   end
 
 end

@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   get 'contact/index'
 
-  get 'profile/view'
+
+  resources :profiles
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
