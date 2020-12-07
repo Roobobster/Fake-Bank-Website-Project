@@ -18,4 +18,12 @@ class Account < ApplicationRecord
         #This definitely wants more validation checks...
         account_balance = account_balance + amount_to_modify
     end
+
+    def add_random_transactions(number_of_times = 1)
+        number_of_times.times {
+            newTransaction = Transaction.new(account_id: self.id)
+            newTransaction.randomise
+            newTransaction.save
+        }
+    end
 end
