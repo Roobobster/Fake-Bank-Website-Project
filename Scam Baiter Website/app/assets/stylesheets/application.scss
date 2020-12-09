@@ -13,4 +13,13 @@
  *= require_tree .
  *= require_self
  */
+ $enable-gradients: true;
+ @import "../node_modules/bootstrap/scss/functions";
+ @import "../node_modules/bootstrap/scss/variables";
+ @import "../node_modules/bootstrap/scss/mixins";
+ 
+ $theme-colors: (
+   "primary": #018a2a
+ );
+
 @import "bootstrap/scss/bootstrap";
