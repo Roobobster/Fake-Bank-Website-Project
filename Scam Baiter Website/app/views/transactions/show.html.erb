@@ -1,2 +1,27 @@
-<h1>Transactions#show</h1>
-<p>Find me in app/views/transactions/show.html.erb</p>
+<h1>Transaction</h1>
+<div class="transactions_show">
+
+  <table>
+    <tr>
+      <th>Date</th>
+      <td><%= @transaction.transaction_datetime %></td>
+    </tr>
+    <tr>
+      <th>Transactor</th>
+      <td><%= @transaction.transactor %></td>
+    </tr>
+    <tr>
+      <th>Message</th>
+      <td><%= @transaction.message %></td>
+    </tr>
+    <tr>
+      <th>Amount</th>
+      <td><%= @transaction.amount %></td>
+    </tr>
+  </table>
+
+  <br/>
+
+  <p>If you think a transaction is fraudulent, please <%= link_to "contact us", {:controller => "contact", :action => "index"} %> to report this.</p>
+
+</div>
