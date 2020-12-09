@@ -14,7 +14,7 @@
       <td><%= user.username %></td>
   
       <td class="actions">
-        <%= link_to("Show", '#', :class => 'action show') %>
+        <%= link_to("Show", {:action => 'show', :id => user.id}, :class => 'action show') %>
         <%= link_to("Edit", '#', :class => 'action edit') %>
         <%= link_to("Delete", '#', :class => 'action delete') %>
       </td>
