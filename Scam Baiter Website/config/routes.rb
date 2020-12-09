@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   get 'admin/index'
+  # get '/admin/:id', to: 'admin#show'
 
   get 'faqs/index'
 
