@@ -3,7 +3,7 @@ class Transaction < ApplicationRecord
 
     def generateRandomMessage(rand_bool)
         message_arr = rand_bool ? ["Shopping", "Clothes", "Dining", "Deposit", "Electricity bill"] : ["Refund", "Transfer", "Salary"]
-        message_arr[rand(message_arr.length)]
+        message_arr.sample
     end
 
     def generateRandomAmount(rand_bool)
@@ -13,7 +13,7 @@ class Transaction < ApplicationRecord
 
     def generateRandomTransactor
         transactor_arr = ["Joe Smith", "Will Taylor", "Ellie Johnson", "Emma Jones", "Jack Brown", "Tracy Lee"]
-        transactor_arr[rand(transactor_arr.length)]
+        transactor_arr.sample
     end 
 
     def randomise

@@ -3,7 +3,7 @@ class AccountsController < ApplicationController
     def view
         profile_id = nil
         if (helpers.logged_in?)
-            profile_id = helpers.current_user.profile_id
+            profile_id = helpers.current_user.id
         else
             #account1 = Account.create(profiles_id: 2, account_type: "Savings", amount: 0.0)
             #account1.save
