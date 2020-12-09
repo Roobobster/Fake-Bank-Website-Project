@@ -1,0 +1,28 @@
+<div class="transactions_index">
+    <h1>Transactions</h1>
+
+    <%= link_to("Add New Transaction", new_transaction_path, :class => 'action new') %>
+
+    <table class="transaction_list">
+        <tr class="header">
+            <th>Date</th>
+            <th>Transactor</th>
+            <th>Message</th>
+            <th>Amount</th>
+            <th>Actions</th>
+        </tr>
+        <% @transactions.each do |transaction| %>
+            <tr>
+                <td><%= transaction.transaction_datetime.strftime("%d-%m-%Y") %></td>
+                <td><%= transaction.transactor %></td>
+                <td><%= transaction.message %></td>
+                <td><%= transaction.amount %></td>
+                <td class="actions">
+                    <%= link_to("Show", transaction_path(transaction), :class => 'action show') %><br/>
+                    <%= link_to("Edit", edit_transaction_path(transaction), :class => 'action edit') %><br/>
+                    <%= link_to("Delete", delete_transaction_path(transaction), :class => 'action delete') %>
+                </td>
+            </tr>
+        <% end %>
+    </table>
+</div>

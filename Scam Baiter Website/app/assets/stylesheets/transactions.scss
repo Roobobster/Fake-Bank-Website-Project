@@ -1,0 +1,25 @@
+// Place all the styles related to the Transactions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.transaction_list {
+    width: 80%;
+    margin: auto;
+}
+
+.transaction_list td, .transaction_list th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.transaction_list tr:nth-child(even){background-color: #f2f2f2;}
+
+.transaction_list tr:hover {background-color: #ddd;}
+
+.transaction_list th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}

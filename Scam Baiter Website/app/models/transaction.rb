@@ -21,6 +21,6 @@ class Transaction < ApplicationRecord
         self.amount = generateRandomAmount(rand_bool)
         self.message = generateRandomMessage(rand_bool)
         self.transactor = generateRandomTransactor
-        self.transaction_datetime = Time.now
+        self.transaction_datetime = Time.at(rand(7.days).seconds.ago)
     end 
 end

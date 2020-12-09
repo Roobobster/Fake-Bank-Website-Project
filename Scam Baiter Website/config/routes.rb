@@ -9,6 +9,12 @@ Rails.application.routes.draw do
 
   resources :profiles
 
+  resources :transactions do
+    member do
+      get :delete
+    end
+  end
+
   get 'profile/view'
  
   get "accounts/index", to: "accounts#index", as: "index"
