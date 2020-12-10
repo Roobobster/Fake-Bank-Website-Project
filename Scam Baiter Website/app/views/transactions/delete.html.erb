@@ -1,4 +1,20 @@
 <%= link_to("<< Back to List", transactions_path, :class => 'back_to_list') %>
 
 <h1>Delete Transaction</h1>
-<p>Find me in app/views/transactions/delete.html.erb</p>
+
+<div class="transaction_delete">
+
+  <%= form_for(@transaction, :method => 'delete') do |f| %>
+
+    <p>Are you sure you want to permanently delete this transaction with id: <%= @transaction.id %>?</p>
+    <%= link_to("Show details of this transaction", transaction_path(@transaction), :class => 'transaction_show') %><br/>
+
+    <br/> 
+    
+    <div class="form-buttons">
+      <%= f.submit("Delete Transaction") %>
+    </div>
+
+  <% end %>
+
+</div>

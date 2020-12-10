@@ -1,7 +1,7 @@
 <%= link_to("<< Back to List", transactions_path, :class => 'back_to_list') %>
 
 <h1>Transaction Details</h1>
-<div class="transactions_show">
+<div class="transaction_show">
 
   <table>
     <tr>
@@ -25,7 +25,10 @@
   <br/>
   
   #If user is admin then show this button to edit transaction >>
-  <%= link_to("Edit transaction", edit_transaction_path(@transaction), :class => 'back_to_list') %><br/>
+  <%= link_to("Edit transaction", edit_transaction_path(@transaction), :class => 'action_edit') %><br/>
+
+  #If user is admin then show this button to delete transaction >>
+  <%= link_to("Delete transaction", delete_transaction_path(@transaction), :class => 'action_delete') %><br/>
 
   <br/>
 
