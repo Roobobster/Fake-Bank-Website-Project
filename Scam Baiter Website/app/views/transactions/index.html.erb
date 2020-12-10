@@ -4,11 +4,10 @@
     <% if !logged_in? %>
         <h3>Please log in first</h3>  
     <% else %> 
-        #If user is admin then show this button to add transactions >>
-        <%= link_to("Add New Transactions", new_transaction_path, :class => 'transaction_new') %><br/>
+        <%= link_to("Add New Transactions", new_transaction_path, :class => 'transaction_new') if current_user.admin %><br/>
 
         <br/>
-        
+
         <% if @transactions.any? %>
             <table class="transaction_list">
                 <tr class="header">
@@ -25,9 +24,9 @@
                         <td><%= transaction.message %></td>
                         <td><%= transaction.amount %></td>
                         <td class="actions">
-                            <%= link_to("Show", transaction_path(transaction), :class => 'transaction_show') %><br/>
-                            <%= link_to("Edit", edit_transaction_path(transaction), :class => 'transaction_edit') %><br/>
-                            <%= link_to("Delete", delete_transaction_path(transaction), :class => 'transaction_delete') %>
+                            <%= link_to("Show", transaction_path(transaction), :class => 'transaction_show') %>
+                            <%= link_to("Edit", edit_transaction_path(transaction), :class => 'transaction_edit') if current_user.admin %>
+                            <%= link_to("Delete", delete_transaction_path(transaction), :class => 'transaction_delete') if current_user.admin %>
                         </td>
                     </tr>
                 <% end %>

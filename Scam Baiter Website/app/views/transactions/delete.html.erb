@@ -1,20 +1,25 @@
 <%= link_to("<< Back to List", transactions_path, :class => 'back_to_list') %>
 
-<h1>Delete Transaction</h1>
-
 <div class="transaction_delete">
+    <h1>Delete Transaction</h1>
 
-  <%= form_for(@transaction, :method => 'delete') do |f| %>
+    <% if current_user.admin %>
 
-    <p>Are you sure you want to permanently delete this transaction with id: <%= @transaction.id %>?</p>
-    <%= link_to("Show details of this transaction", transaction_path(@transaction), :class => 'transaction_show') %><br/>
+        <%= form_for(@transaction, :method => 'delete') do |f| %>
 
-    <br/> 
+            <p>Are you sure you want to permanently delete this transaction with id: <%= @transaction.id %>?</p>
+            <%= link_to("Show details of this transaction", transaction_path(@transaction), :class => 'transaction_show') %><br/>
+
+            <br/> 
+
+            <div class="form-buttons">
+                <%= f.submit("Delete Transaction") %>
+            </div>
+
+        <% end %>
     
-    <div class="form-buttons">
-      <%= f.submit("Delete Transaction") %>
-    </div>
-
-  <% end %>
+    <% else %>
+        <h3>Cannot edit transaction history!!</h3>
+    <% end %>
 
 </div>
