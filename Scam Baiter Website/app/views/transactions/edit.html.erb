@@ -1,2 +1,33 @@
-<h1>Transactions#edit</h1>
-<p>Find me in app/views/transactions/edit.html.erb</p>
+<%= link_to("<< Back to List", transactions_path, :class => 'back_to_list') %>
+
+<h1>Edit Transaction</h1>
+
+<div class="transactions edit">
+
+  <%= form_for(@transaction) do |f| %>
+
+    <table>
+        <tr>
+            <th>Date</th>
+            <td><%= f.text_field(:transaction_datetime) %></td>
+        </tr>
+        <tr>
+            <th>Transactor</th>
+            <td><%= f.text_field(:transactor) %></td>
+        </tr>
+        <tr>
+            <th>Message</th>
+            <td><%= f.text_field(:message) %></td>
+        </tr>
+        <tr>
+            <th>Amount</th>
+            <td><%= f.text_field(:amount) %></td>
+        </tr>
+    </table>
+
+    <div class="form-buttons">
+      <%= f.submit("Update Transaction") %>
+    </div>
+
+  <% end %>
+</div>

@@ -1,5 +1,7 @@
 class TransactionsController < ApplicationController
 
+  # Go to http://localhost:3000/transactions to see all transactions in your database for now 
+
   def index
     @transactions = Transaction.order('transaction_datetime DESC')
   end
@@ -13,6 +15,15 @@ class TransactionsController < ApplicationController
 
   def edit
     @transaction = Transaction.find(params[:id])
+  end
+
+  def update 
+    @transaction = Transaction.find(params[:id])
+    if @transaction.update(transaction_params)
+      redirect_to(transaction_path(@transaction))
+    else 
+      render('edit')
+    end 
   end
 
   def delete

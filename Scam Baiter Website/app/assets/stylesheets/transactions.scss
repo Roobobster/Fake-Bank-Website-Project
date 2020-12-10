@@ -23,3 +23,16 @@
   background-color: #4CAF50;
   color: white;
 }
+
+.back_to_list {
+  text-decoration: none;
+  padding: 8px 16px;
+  margin: 20px;
+  background-color: #ee8554;
+  color: black;
+}
+
+.back_to_list:hover {
+  background-color: #ddd;
+  color: black;
+}
