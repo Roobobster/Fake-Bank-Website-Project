@@ -22,9 +22,9 @@
                         <td><%= transaction.transaction_datetime.strftime("%d-%m-%Y") %></td>
                         <td><%= transaction.transactor %></td>
                         <td><%= transaction.message %></td>
-                        <td><%= transaction.amount %></td>
+                        <td><%= "%.2f" % transaction.amount %></td>
                         <td class="actions">
-                            <%= link_to("Show", transaction_path(transaction), :class => 'transaction_show') %>
+                            <%= link_to("Details", transaction_path(transaction), :class => 'transaction_show') %>
                             <%= link_to("Edit", edit_transaction_path(transaction), :class => 'transaction_edit') if current_user.admin %>
                             <%= link_to("Delete", delete_transaction_path(transaction), :class => 'transaction_delete') if current_user.admin %>
                         </td>

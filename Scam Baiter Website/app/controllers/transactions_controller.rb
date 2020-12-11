@@ -4,6 +4,9 @@ class TransactionsController < ApplicationController
 
   def index
     @transactions = Transaction.order('transaction_datetime DESC')
+    # @account = Account.find(5)
+    # @account.add_random_transactions
+    # p @account.transactions
   end
 
   def show
@@ -11,7 +14,17 @@ class TransactionsController < ApplicationController
   end
 
   def new
+    @transaction = Transaction.new(account_id: 6, transaction_datetime: Time.now)
   end
+
+  def create 
+    @transaction = Transaction.new(transaction_params)
+    if @transaction.save
+      redirect_to(transactions_path)
+    else 
+      render('new')
+    end 
+  end 
 
   def edit
     @transaction = Transaction.find(params[:id])
@@ -39,7 +52,7 @@ class TransactionsController < ApplicationController
   private 
 
   def transaction_params
-    params.require(:transaction).permit(:transaction_datetime, :amount, :transactor, :message)
+    params.require(:transaction).permit(:account_id, :transaction_datetime, :amount, :transactor, :message)
   end
 
 end
