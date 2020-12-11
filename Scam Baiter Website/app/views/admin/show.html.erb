@@ -1,4 +1,5 @@
 
+<%= link_to("<< Back to List", admin_path, :class => 'back-link') %>
 
 <div class="admin show">
   <h2>Show Profile</h2>
@@ -6,66 +7,61 @@
   <table summary="Profile detail view">
     <tr>
       <th>Username</th>
-      <td><%= @users.username %></td>
+      <td><%= @user.username %></td>
     </tr>
 
     <tr>
         <th>Email</th>
-        <td><%= @users.email %></td>
+        <td><%= @user.email %></td>
     </tr>
-
-#   <tr>
-#         <th>Password</th>
-#         <td><%= @users.password_digest %></td>
-#   </tr>
 
 <tr>
     <th>Address</th>
-    <td><%= @users.address %></td>
+    <td><%= @user.address %></td>
 </tr>
 
 
 <tr>
     <th>Phone Number</th>
-    <td><%= @users.telephone %></td>
+    <td><%= @user.telephone %></td>
 </tr>
 
 
 <tr>
     <th>First Name</th>
-    <td><%= @users.first_name %></td>
+    <td><%= @user.first_name %></td>
 </tr>
 
 
 <tr>
     <th>Last Name</th>
-    <td><%= @users.last_name %></td>
+    <td><%= @user.last_name %></td>
 </tr>
 
 <tr>
     <th>Age</th>
-    <td><%= @users.age %></td>
+    <td><%= @user.age %></td>
 </tr>
 
 <tr>
     <th>Gender</th>
-    <td><%= @users.gender %></td>
+    <td><%= @user.gender %></td>
 </tr>
 
 <tr>
     <th>Admin Status</th>
-    <td><%= @users.admin %></td>
+    <td><%= @user.admin %></td>
 </tr>
 
     
     <tr>
       <th>Created</th>
-      <td><%= @users.created_at %></td>
+      <td><%= @user.created_at %></td>
     </tr>
 
     <tr>
       <th>Updated</th>
-      <td><%= @users.updated_at %></td>
+      <td><%= @user.updated_at %></td>
     </tr>
 
   </table>

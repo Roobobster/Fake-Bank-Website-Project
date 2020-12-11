@@ -1,7 +1,7 @@
 <div class="admin index">
   <h2>Profiles</h2>
 
-  <%= link_to("Add a New Profile", '#', :class => 'action new') %>
+  <%= link_to("Add a New Profile", {:action => 'new'}, :class => 'action new') %>
 
   <table class="listing" summary="Profile list">
     <tr class="header">
@@ -15,7 +15,7 @@
   
       <td class="actions">
         <%= link_to("Show", {:action => 'show', :id => user.id}, :class => 'action show') %>
-        <%= link_to("Edit", '#', :class => 'action edit') %>
+        <%= link_to("Edit", {:action => 'edit', :id => user.id}, :class => 'action edit') %>
         <%= link_to("Delete", '#', :class => 'action delete') %>
       </td>
     
