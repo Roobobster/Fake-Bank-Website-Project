@@ -1,17 +1,15 @@
-<%= error_messages_for(f.object) %>
-
-<table class="transaction_form">
+<table id="transaction_form">
     <tr>
         <th>Account ID</th>
-        <td><%= f.text_field(:account_id) %></td>
+        <td><%= f.text_field(:account_id, :id => "account_id") %></td>
     </tr>
     <tr>
         <th>Date</th>
-        <td><%= f.text_field(:transaction_datetime) %></td>
+        <td><%= f.text_field(:transaction_datetime, :id => "transaction_datetime") %></td>
     </tr>
     <tr>
         <th>Transactor</th>
-        <td><%= f.text_field(:transactor) %></td>
+        <td><%= f.text_field(:transactor, :id => "transactor") %></td>
     </tr>
     <tr>
         <th>Message</th>

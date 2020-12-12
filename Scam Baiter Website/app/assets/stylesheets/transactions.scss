@@ -49,12 +49,75 @@
 .back_to_list {
   text-decoration: none;
   padding: 8px 16px;
-  margin: 20px;
+  margin-left: 100px;
   background-color: #ee8554;
-  color: black;
+  color: white;
 }
 
 .back_to_list:hover {
   background-color: #ddd;
   color: black;
+}
+
+.link_to_actions {
+  background-color: #3491bd;
+  border: none;
+  color: white;
+  text-align: center;
+  padding: 8px 15px;
+  margin: 10px;
+}
+
+.link_to_actions:hover {
+  color: white;
+}
+
+.form-buttons {
+  background-color: #fdcb74;
+  border: none;
+  color: rgb(54, 50, 50);
+  text-align: center;
+  padding: 6px;
+  margin: 10px;
+  width: 250px;
+}
+
+.transaction_show {
+  text-align: center;
+}
+
+.transaction_show table{
+  text-align: left;
+  margin: 20px auto;
+}
+
+.transaction_show td, th {
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+}
+
+.transaction_show th {
+  font-size: 18px;
+  background-color: #0a7c2c;
+  color: white;
+}
+
+.transaction_show td {
+  width: 70%;
+}
+
+.transaction_show tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.transaction_delete {
+  text-align: center;
+}
+
+.transaction_delete h5 {
+  width: 70%;
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  margin: auto;
 }

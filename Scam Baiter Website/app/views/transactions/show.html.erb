@@ -1,12 +1,12 @@
-<%= link_to("<< Back to List", transactions_path, :class => 'back_to_list') %>
+<%= render(:partial => 'backToList') %>
 
 <div class="transaction_show">
   <h1>Transaction Details</h1>
 
   <table>
     <tr>    
-        <th>Reference</th>
-        <td><%= @transaction.id %></td>
+      <th>Reference</th>
+      <td><%= @transaction.id %></td>
     </tr>
     <tr>
       <th>Date</th>
@@ -26,11 +26,11 @@
     </tr>
   </table>
 
-  <%= link_to("Edit transaction", edit_transaction_path(@transaction), :class => 'action_edit')  if current_user.admin %>
-  <%= link_to("Delete transaction", delete_transaction_path(@transaction), :class => 'action_delete') if current_user.admin %>
+  <%= link_to("Edit transaction", edit_transaction_path(@transaction), :class => 'link_to_actions')  if current_user.admin %>
+  <%= link_to("Delete transaction", delete_transaction_path(@transaction), :class => 'link_to_actions') if current_user.admin %>
 
-  <br/>
+  <br/><br/>
 
-  <p>If you think a transaction is fraudulent, please <%= link_to "contact us", {:controller => "contact", :action => "index"} %> to report this.</p>
+  <h5>If you think a transaction is fraudulent, please <%= link_to "contact us", {:controller => "contact", :action => "index"} %> to report this.</h5>
 
 </div>

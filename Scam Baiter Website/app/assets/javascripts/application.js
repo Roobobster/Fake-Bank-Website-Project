@@ -17,15 +17,14 @@
 //= require_tree .
 
 $(document).ready(() => {
-    var mybutton = document.getElementById("backToTopBtn");
+    
+    window.onscroll = () => {
+        var backToTopBtn = document.getElementById("backToTopBtn");
 
-    window.onscroll = function () { scrollFunction() };
-
-    function scrollFunction() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            mybutton.style.display = "block";
+            backToTopBtn.style.display = "block";
         } else {
-            mybutton.style.display = "none";
+            backToTopBtn.style.display = "none";
         }
     }
 
@@ -34,3 +33,19 @@ $(document).ready(() => {
         document.documentElement.scrollTop = 0;
     }) 
 })
+
+// $(document).ready(() => {
+
+//     $('#submitBtn').prop('disabled', true);
+
+//     $('#account_id, #transaction_datetime, #transactor').on('keypress', function () {
+//         var urlInputLength = $('#account_id').val().length;
+//         var timeInputLength = $('#transaction_datetime').val().length;
+//         var descriptionInputLength = $('#transactor').val().length;
+//         if (urlInputLength == 0 || descriptionInputLength == 0 || timeInputLength == 0) {
+//             $('#submitBtn').prop('disabled', true);
+//         } else {
+//             $('#submitBtn').prop('disabled', false);
+//         }
+//     });
+// })

@@ -1,4 +1,4 @@
-<%= link_to("<< Back to List", transactions_path, :class => 'back_to_list') %>
+<%= render(:partial => 'backToList') %>
 
 <div class="transaction_new">
     <h1>Add Transactions</h1>
@@ -8,8 +8,8 @@
 
             <%= render(:partial => 'form', :locals => {:f => f}) %>
 
-            <div class="form-buttons">
-                <%= f.submit("Add Transaction") %>
+            <div>
+                <%= f.submit("Add Transaction", :id => "submitBtn") %>
             </div>
 
         <% end %>
