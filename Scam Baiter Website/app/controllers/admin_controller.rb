@@ -11,6 +11,16 @@ class AdminController < ApplicationController
     @user=Profile.new
   end
 
+  def create
+    @user=Profile.new(params[:user])
+    if @user.save
+        redirect_to('http://localhost:3000/admin')
+      else
+        render('new')
+    end
+
+  end
+
   def edit
     @user=Profile.find(params[:id])
   end
