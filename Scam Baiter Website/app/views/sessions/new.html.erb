@@ -1,11 +1,13 @@
-<p id=”alert”><%= alert %></p> <!--make prettier later-->
-
-<div class="container-fluid">
+<div class="container-fluid" id="login-container">
+    <p id=”alert”><%= alert %></p> <!--make prettier later-->
 	<div class="row">
 		<div class="col-md-4">
 		</div>
 		<div class="col-md-4">
             <div class="wrapLogin">
+                <span class="logo"> 
+                    <%= image_tag("/images/fox.png", :size => "80x100")%>
+                </span>
                 <h1 class="text-center">Log In</h1>
                 <br/>
                 <%=bootstrap_form_with(url: login_path, scope: :session, local: true) do |f| %>
@@ -14,7 +16,7 @@
                 <br/>
 
                 <div class="col text-center">
-                    <%= f.submit "Log in", class: 'btn btn-primary' %> 
+                    <%= f.submit "Login", class: 'btn btn-primary' %> 
                 </div>
 
                 <% end %>
