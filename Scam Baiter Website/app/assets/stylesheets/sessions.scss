@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@600&display=swap');
 
 //only use for cross site theming
 //* {
@@ -15,20 +16,33 @@
     border-radius: 10px;
     overflow: hidden;
     padding: 100px 70px 60px 70px;
-  
-//     background: #043d22;
-//     background: -webkit-linear-gradient(top, #83cc58, rgb(3, 53, 29)); //currently broken :(
-//     background: -o-linear-gradient(top, #83cc58, rgb(3, 53, 29));
-//     background: -moz-linear-gradient(top, #83cc58, rgb(3, 53, 29));
-//     background: linear-gradient(top, #83cc58, rgb(3, 53, 29));
-    }
+}
 
-.container-fluid { 
-    font-family: 'Lato', sans-serif;
+#login-container { 
+    font-family: 'Spartan', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    //font-family: 'Lato', sans-serif;
     color: rgb(255, 255, 255);
+    background-attachment: fixed; //parallax effect, can remove later if don't like
     background-image: url("/images/backgroundLake.jpg");
     background-size: cover; 
     width: 100%;
     height: 100%;
     padding: 100px 70px 400px 70px;
 }
+
+.logo {  
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 180px;
+    border-radius: 50%;
+    //background-color: rgb(105, 59, 59);
+    margin: 0 auto;
+  }

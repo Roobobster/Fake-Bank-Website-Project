@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'admin/index'
-  get '/admin/:id', to: 'admin#show'
-  get '/admin/new', to: 'admin#new'
-  post '/admin', to: 'admin#create'
+  get 'admins/index'
+  get '/admins/:id', to: 'admins#show'
+  get '/admins/new', to: 'admins#new'
+  post '/admins', to: 'admins#create'
 
-  resources :admin do
+  resources :admins do
     member do
       get :delete
     end
@@ -14,9 +14,8 @@ Rails.application.routes.draw do
   get 'faqs/index'
 
   root 'home#index'
-
+  get 'faqs/index'
   get 'home/index'
-
   get 'contact/index'
 
   get 'profile/view'
@@ -25,10 +24,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-  #resources :sessions #, only: [:new, :create, :destroy]  get 'signup', to: 'profile#new', as: 'signup'
-  #get 'login', to: 'sessions#new', as: 'login'
-  #get 'logout', to: 'sessions#destroy', as: 'logout'
-
+  get 'admins/index'
+  get '/admins/:id', to: 'admins#show'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

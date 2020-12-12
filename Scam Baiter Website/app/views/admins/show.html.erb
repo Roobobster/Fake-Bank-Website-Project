@@ -1,6 +1,4 @@
-
-<%= link_to("<< Back to List", admin_path, :class => 'back-link') %>
-
+<%= link_to("<< Back to List", admins_path, :class => 'back-link') %>
 <div class="admin show">
   <h2>Show Profile</h2>
 
@@ -14,7 +12,12 @@
         <th>Email</th>
         <td><%= @user.email %></td>
     </tr>
-
+<!-- 
+    <tr>
+         <th>Password</th>
+         <td><%= @user.password_digest %></td>
+    </tr> -->
+  
 <tr>
     <th>Address</th>
     <td><%= @user.address %></td>
@@ -26,12 +29,15 @@
     <td><%= @user.telephone %></td>
 </tr>
 
+    <tr>
+        <th>Phone Number</th>
+        <td><%= @user.telephone %></td>
+    </tr>
 
-<tr>
-    <th>First Name</th>
-    <td><%= @user.first_name %></td>
-</tr>
-
+    <tr>
+        <th>First Name</th>
+        <td><%= @user.first_name %></td>
+    </tr>
 
 <tr>
     <th>Last Name</th>
@@ -53,6 +59,10 @@
     <td><%= @user.admin %></td>
 </tr>
 
+    <tr>
+        <th>Admin Status</th>
+        <td><%= @user.admin %></td>
+    </tr>
     
     <tr>
       <th>Created</th>
