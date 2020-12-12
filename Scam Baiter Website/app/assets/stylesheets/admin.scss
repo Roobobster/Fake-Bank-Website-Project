@@ -7,8 +7,8 @@
     font-style: normal;
     font-weight: 700;
     //font-family: 'Lato', sans-serif;
-    color: rgb(133, 199, 12);
-    background-color: rgb(24, 24, 24);
+    color: rgb(230, 178, 250);
+    background-color: rgb(12, 12, 12);
     padding: 50px 20px 200px 20px;
 }
 
@@ -25,11 +25,11 @@ th, td {
 .table.profiles {
     border-radius: 16px;
     overflow: hidden;
-    //background: #2600ad;
-    background: -webkit-linear-gradient(-70deg, #061f64 , #3d89ec);
-    background: -o-linear-gradient(-70deg, #061f64 , #3d89ec);
-    background: -moz-linear-gradient(-70deg, #061f64 , #3d89ec);
-    background: linear-gradient(-70deg, #061f64 , #3d89ec);
+    background: #7918f2;
+    background: -webkit-linear-gradient(-70deg, #ac32e4 , #4801ff);
+    background: -o-linear-gradient(-70deg, #ac32e4 , #4801ff);
+    background: -moz-linear-gradient(-70deg, #ac32e4 , #4801ff);
+    background: linear-gradient(-70deg, #ac32e4 , #4801ff);
     font-family: 'Spartan', sans-serif;
     font-size: 14px;
     color: #fff;
@@ -44,7 +44,7 @@ th, td {
     font-size: 14px;
     color: #fff;
     line-height: 1.4;
-    border-color: rgb(54, 54, 54);
+    border-color: yellowgreen;
 }
 
 .table.profiles th {

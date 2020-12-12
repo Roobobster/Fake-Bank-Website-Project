@@ -7,7 +7,7 @@
       <br/>
       <h2 class="text-center">Profiles</h2>
         <div class="p-4 text-center">
-          <%= button_to("Add a New Profile", {:action => 'new'}, :class => 'action new btn-block') %>
+          <%= link_to("Add a New Profile", new_admin_path, :class => 'btn btn-secondary') %>
         </div>
         <br/>
         <table class="table profiles text-center">
@@ -16,14 +16,14 @@
             <th>Actions</th>
           </tr>
           
-          <% @users.each do |user| %>
+          <% @users.each do |currentUser| %>
           <tr>
-            <td><%= user.username %></td>
+            <td><%= currentUser.username %></td>
         
             <td class="actions"> 
-              <%= button_to("Show", {:action => 'show', :id => user.id}, :class => 'action show', :method => "get") %>
-              <%= button_to("Edit", {:action => 'edit', :id => user.id}, :class => 'action show', :method => "action edit") %>
-              <%= button_to("Delete", '#', :class => 'action show', :method => "action delete") %>
+              <%= link_to('Show', admin_path(currentUser), :class => 'btn btn-secondary') %>
+              <%= link_to('Edit', edit_admin_path(currentUser), :class => 'btn btn-secondary') %>
+              <%= link_to('Delete', '#', :class => 'btn btn-secondary') %>
             </td>
           
           </tr>
