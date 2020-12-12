@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'admins/index'
-  get '/admins/:id', to: 'admins#show'
-  get '/admins/new', to: 'admins#new'
-  post '/admins', to: 'admins#create'
+  #get 'admins/index'
+  #get '/admins/:id', to: 'admins#show'
+  #get 'admins/new', to: 'admins#new'
+  #post 'admins', to: 'admins#create'
 
   resources :admins do
     member do
@@ -24,8 +24,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-  get 'admins/index'
-  get '/admins/:id', to: 'admins#show'
+  
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
