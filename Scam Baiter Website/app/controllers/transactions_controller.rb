@@ -16,7 +16,7 @@ class TransactionsController < ApplicationController
   def new
     @transaction = Transaction.new(account_id: 6, transaction_datetime: Time.now)
   end
-
+  
   def create 
     @transaction = Transaction.new(transaction_params)
     if @transaction.save

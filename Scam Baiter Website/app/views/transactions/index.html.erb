@@ -1,16 +1,14 @@
 <div class="transactions_index">
-    <h1>Transactions</h1>
+    <h1>Transaction History</h1>
 
     <% if !logged_in? %>
         <h3>Please log in first</h3>  
     <% else %> 
-        <%= link_to("Add New Transactions", new_transaction_path, :class => 'transaction_new') if current_user.admin %><br/>
-
-        <br/>
+        <%= link_to("Add New Transactions", new_transaction_path, :class => 'add_transaction_btn') if current_user.admin %>
 
         <% if @transactions.any? %>
             <table class="transaction_list">
-                <tr class="header">
+                <tr>
                     <th>Date</th>
                     <th>Transactor</th>
                     <th>Message</th>
