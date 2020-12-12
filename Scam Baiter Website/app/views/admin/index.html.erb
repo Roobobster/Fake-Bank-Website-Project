@@ -3,12 +3,11 @@
 	<div class="row">
     <div class="col-md-1">
     </div>
-
     <div class="col-md-10 text-center">
       <br/>
       <h2 class="text-center">Profiles</h2>
         <div class="p-4 text-center">
-          <%= button_to("Add a New Profile", '#', :class => 'action new btn-block') %>
+          <%= button_to("Add a New Profile", {:action => 'new'}, :class => 'action new btn-block') %>
         </div>
         <br/>
         <table class="table profiles text-center">
@@ -23,7 +22,7 @@
         
             <td class="actions"> 
               <%= button_to("Show", {:action => 'show', :id => user.id}, :class => 'action show', :method => "get") %>
-              <%= button_to("Edit", '#', :class => 'action show', :method => "action edit") %>
+              <%= button_to("Edit", {:action => 'edit', :id => user.id}, :class => 'action show', :method => "action edit") %>
               <%= button_to("Delete", '#', :class => 'action show', :method => "action delete") %>
             </td>
           

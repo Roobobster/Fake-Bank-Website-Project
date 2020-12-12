@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+
+  get 'admin/index'
+  get '/admin/:id', to: 'admin#show'
+  get '/admin/new', to: 'admin#new'
+  post '/admin', to: 'admin#create'
+
+  resources :admin do
+    member do
+      get :delete
+    end
+  end
+
+  get 'faqs/index'
+
   root 'home#index'
   get 'faqs/index'
   get 'home/index'

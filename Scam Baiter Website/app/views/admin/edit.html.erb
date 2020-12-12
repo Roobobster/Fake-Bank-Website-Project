@@ -1,0 +1,67 @@
+<%= link_to("<< Back to List", admin_path, :class => 'back-link') %>
+
+<div class="admin edit">
+  <h2>Update Profile</h2>
+
+  <%= form_for(@user) do |f| %>
+
+    <table summary="Profile form fields">
+
+      <tr>
+        <th>UserName</th>
+        <td><%= f.text_field(:username) %></td>
+      </tr>
+
+  <tr>
+      <th>Email</th>
+      <td><%=f.text_field(:email) %></td>
+  </tr>
+
+<tr>
+  <th>Address</th>
+  <td><%= f.text_field(:address) %></td>
+</tr>
+
+
+<tr>
+  <th>Phone Number</th>
+  <td><%= f.text_field(:telephone) %></td>
+</tr>
+
+
+<tr>
+  <th>First Name</th>
+  <td><%= f.text_field(:first_name) %></td>
+</tr>
+
+
+<tr>
+  <th>Last Name</th>
+  <td><%=f.text_field(:last_name) %></td>
+</tr>
+
+<tr>
+  <th>Age</th>
+  <td><%= f.text_field(:age) %></td>
+</tr>
+
+<tr>
+  <th>Gender</th>
+  <td><%= f.text_field(:gender) %></td>
+</tr>
+
+<tr>
+  <th>Admin Status</th>
+  <td><%= f.text_field(:admin) %></td>
+</tr>
+
+
+
+    </table>
+
+    <div class="form-buttons">
+      <%= f.submit("Update Profile") %>
+    </div>
+
+  <% end %>
+</div>
