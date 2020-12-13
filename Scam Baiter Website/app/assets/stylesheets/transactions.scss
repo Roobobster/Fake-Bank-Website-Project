@@ -142,3 +142,12 @@
   color: white;
   margin: auto;
 }
+
+input:disabled {
+  background: #dddddd;
+  color: rgb(146, 145, 145);
+}
+
+input:disabled:hover{
+  background: #dddddd;
+}

@@ -14,5 +14,20 @@
     <% else %>
         <%= render(:partial => 'warning') %>
     <% end %>
-  
 </div>
+
+<script>
+    $(document).ready(() => {
+        let submitBtn = document.querySelector('#submitBtn');
+        submitBtn.disabled = true;
+
+        let inputs = document.querySelectorAll('[type="text"]');
+        for (i = 0; i < inputs.length; i++) {
+            inputs[i].addEventListener('input', () => {
+                let values = [];
+                inputs.forEach(v => values.push(v.value));
+                submitBtn.disabled = values.includes('');
+            })
+        }
+    })
+</script>

@@ -33,19 +33,3 @@ $(document).ready(() => {
         document.documentElement.scrollTop = 0;
     }) 
 })
-
-// $(document).ready(() => {
-
-//     $('#submitBtn').prop('disabled', true);
-
-//     $('#account_id, #transaction_datetime, #transactor').on('keypress', function () {
-//         var urlInputLength = $('#account_id').val().length;
-//         var timeInputLength = $('#transaction_datetime').val().length;
-//         var descriptionInputLength = $('#transactor').val().length;
-//         if (urlInputLength == 0 || descriptionInputLength == 0 || timeInputLength == 0) {
-//             $('#submitBtn').prop('disabled', true);
-//         } else {
-//             $('#submitBtn').prop('disabled', false);
-//         }
-//     });
-// })
