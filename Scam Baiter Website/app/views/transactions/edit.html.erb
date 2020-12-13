@@ -4,7 +4,7 @@
   <h1>Edit Transaction</h1>
 
   <% if current_user.admin %>
-    <%= form_for(@transaction) do |f| %>
+    <%= form_for([@account, @transaction]) do |f| %>
 
       <%= render(:partial => 'form', :locals => {:f => f}) %>
 

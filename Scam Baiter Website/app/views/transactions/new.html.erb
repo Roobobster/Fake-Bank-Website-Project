@@ -4,7 +4,7 @@
     <h1>Add Transactions</h1>
 
     <% if current_user.admin %>
-        <%= form_for(@transaction, :url => transactions_path, :method => 'post') do |f| %>
+        <%= form_for([@account, @transaction], :url => account_transactions_path(@account), :method => 'post') do |f| %>
 
             <%= render(:partial => 'form', :locals => {:f => f}) %>
 

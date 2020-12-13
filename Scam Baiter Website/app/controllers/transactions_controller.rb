@@ -1,58 +1,58 @@
 class TransactionsController < ApplicationController
-
-  # Go to http://localhost:3000/transactions to see all transactions in your database for now 
+  before_action :get_account
+  before_action :set_transaction, only: [:show, :edit, :update, :delete, :destroy]
 
   def index
-    @transactions = Transaction.order('transaction_datetime DESC')
-    # @account = Account.find(5)
-    # @account.add_random_transactions
-    # p @account.transactions
+    @transactions = @account.transactions.order('transaction_datetime DESC')
   end
 
   def show
-    @transaction = Transaction.find(params[:id])
   end
 
   def new
-    @transaction = Transaction.new(account_id: 6, transaction_datetime: Time.now)
+    @transaction = @account.transactions.build(transaction_datetime: Time.now)
   end
   
   def create 
-    @transaction = Transaction.new(transaction_params)
+    @transaction = @account.transactions.build(transaction_params)
     if @transaction.save
-      redirect_to(transactions_path)
+      redirect_to(account_transactions_path(@account))
     else 
       render('new')
     end 
   end 
 
   def edit
-    @transaction = Transaction.find(params[:id])
   end
 
   def update 
-    @transaction = Transaction.find(params[:id])
     if @transaction.update(transaction_params)
-      redirect_to(transaction_path(@transaction))
+      redirect_to(account_transactions_path(@account))
     else 
       render('edit')
     end 
   end
 
   def delete
-    @transaction = Transaction.find(params[:id])
   end
 
   def destroy
-    @transaction = Transaction.find(params[:id])
     @transaction.destroy
-    redirect_to(transactions_path)
+    redirect_to(account_transactions_path(@account))
   end 
 
   private 
 
-  def transaction_params
-    params.require(:transaction).permit(:account_id, :transaction_datetime, :amount, :transactor, :message)
-  end
+    def get_account
+      @account = Account.find(params[:account_id])
+    end
+
+    def set_transaction
+      @transaction = @account.transactions.find(params[:id])
+    end
+
+    def transaction_params
+      params.require(:transaction).permit(:account_id, :transaction_datetime, :amount, :transactor, :message)
+    end
 
 end

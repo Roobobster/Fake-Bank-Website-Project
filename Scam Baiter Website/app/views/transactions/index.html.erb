@@ -4,7 +4,7 @@
     <% if !logged_in? %>
         <h3 class="warning">Please <%= link_to "login", {:controller=> "sessions",:action => "new"} %> first!</h3>  
     <% else %> 
-        <%= link_to("Add New Transactions", new_transaction_path, :class => 'add_transaction_btn') if current_user.admin %>
+        <%= link_to("Add New Transactions", new_account_transaction_path(@account), :class => 'add_transaction_btn') if current_user.admin %>
 
         <% if @transactions.any? %>
             <table class="transaction_list">
@@ -22,9 +22,9 @@
                         <td><%= transaction.message %></td>
                         <td><%= "%.2f" % transaction.amount %></td>
                         <td class="actions">
-                            <%= link_to("Details", transaction_path(transaction), :class => 'transaction_show') %>
-                            <%= link_to("Edit", edit_transaction_path(transaction), :class => 'transaction_edit') if current_user.admin %>
-                            <%= link_to("Delete", delete_transaction_path(transaction), :class => 'transaction_delete') if current_user.admin %>
+                            <%= link_to("Details", account_transaction_path(@account, transaction), :class => 'transaction_show') %>
+                            <%= link_to("Edit", edit_account_transaction_path(@account, transaction), :class => 'transaction_edit') if current_user.admin %>
+                            <%= link_to("Delete", delete_account_transaction_path(@account, transaction), :class => 'transaction_delete') if current_user.admin %>
                         </td>
                     </tr>
                 <% end %>
