@@ -15,9 +15,27 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :accounts  do
+    member do
+        get 'random_trans'
+    end
+  end
+
+  # resources :accounts do
+  #   member do
+  #       get 'random_trans'
+  #   end
+
+  #   resources :transactions do
+  #     member do
+  #       get :delete
+  #     end
+  #   end
+  # end
+
   get 'profile/view'
  
-  get "accounts/index", to: "accounts#index", as: "index"
+  # get "accounts/index", to: "accounts#index", as: "index"
 
 
   get '/login', to: 'sessions#new'

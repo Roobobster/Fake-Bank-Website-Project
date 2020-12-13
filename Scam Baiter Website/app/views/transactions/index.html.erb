@@ -2,7 +2,7 @@
     <h1>Transaction History</h1>
 
     <% if !logged_in? %>
-        <h3>Please log in first</h3>  
+        <h3 class="warning">Please <%= link_to "login", {:controller=> "sessions",:action => "new"} %> first!</h3>  
     <% else %> 
         <%= link_to("Add New Transactions", new_transaction_path, :class => 'add_transaction_btn') if current_user.admin %>
 
@@ -30,7 +30,7 @@
                 <% end %>
             </table>
         <% else %>
-            <h3>Note: No transactions yet.</h3>
+            <h3 class="warning">Note: No transactions yet.</h3>
         <% end %>
     <% end %>
 </div>
