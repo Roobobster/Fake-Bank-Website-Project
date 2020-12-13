@@ -8,13 +8,11 @@
 
       <%= render(:partial => 'form', :locals => {:f => f}) %>
 
-      <div id="form-buttons">
-        <%= f.submit("Update Transaction") %>
-      </div>
+      <%= f.submit("Update Transaction", :class => "form-buttons") %>
 
     <% end %>
   <% else %>
-    <h3>Cannot edit transation history!!</h3>
+    <%= render(:partial => 'warning') %>
   <% end %>
   
 </div>

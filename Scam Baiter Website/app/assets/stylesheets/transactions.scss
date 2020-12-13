@@ -82,16 +82,28 @@
   width: 250px;
 }
 
-.transaction_show {
+.form-buttons:hover {
+  background-color: #d9e25e;
+}
+
+.transaction_show, .transaction_edit, .transaction_new, .transaction_delete {
   text-align: center;
 }
 
-.transaction_show table{
+.transaction_delete h5, .warning {
+  width: 70%;
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  margin: auto;
+}
+
+.transaction_show table, #transaction_form{
   text-align: left;
   margin: 20px auto;
 }
 
-.transaction_show td, th {
+.transaction_show td, th, #transaction_form td, th  {
   border: 1px solid #ddd;
   padding: 10px 20px;
 }
@@ -102,22 +114,30 @@
   color: white;
 }
 
-.transaction_show td {
-  width: 70%;
+.transaction_show td, #transaction_form td {
+  width: 75%;
 }
 
 .transaction_show tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-.transaction_delete {
-  text-align: center;
+#transaction_form th {
+  font-size: 18px;
+  background-color: #cf5131;
+  color: white;
 }
 
-.transaction_delete h5 {
-  width: 70%;
+#transaction_form input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px lightgrey solid;
+}
+
+.warning {
+  width: 50%;
   padding: 20px;
-  background-color: #f44336;
+  background-color: #ff9100;
   color: white;
   margin: auto;
 }
