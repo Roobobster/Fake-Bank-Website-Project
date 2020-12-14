@@ -16,11 +16,20 @@ class TransactionsController < ApplicationController
   def create 
     @transaction = @account.transactions.build(transaction_params)
     if @transaction.save
-      redirect_to(account_transactions_path(@account))
+      redirect_to(account_transaction_path(@account, @transaction))
     else 
       render('new')
     end 
   end 
+
+  def add_rand_trans
+    @transaction = @account.add_random_transactions
+    if @transaction.save
+      redirect_to(account_transaction_path(@account, @transaction))
+    else 
+      render('new')
+    end 
+  end
 
   def edit
   end

@@ -9,22 +9,14 @@ Rails.application.routes.draw do
 
   resources :profiles
 
-  # resources :transactions do
-  #   member do
-  #     get :delete
-  #   end
-  # end
-
-  # resources :accounts  do
-  #   member do
-  #       get 'random_trans'
-  #   end
-  # end
-
   resources :accounts do
     resources :transactions do
       member do
         get :delete
+      end
+
+      collection do 
+        get 'add_rand_trans'
       end
     end
   end

@@ -83,7 +83,7 @@
 }
 
 .form-buttons:hover {
-  background-color: #d9e25e;
+  background-color: #e2c35e;
 }
 
 .transaction_show, .transaction_edit, .transaction_new, .transaction_delete {
@@ -150,4 +150,31 @@ input:disabled {
 
 input:disabled:hover{
   background: #dddddd;
+}
+
+.add_transaction_columns {
+  display: inline-flex; 
+  width: 80%;
+}
+
+.add_transaction {
+  border: 1px lightgrey solid;
+  padding: 20px;
+  width: 100%;
+  height: 450px;
+  margin: auto 10px;
+}
+
+#random_trans {
+  background-color: #fdcb74;
+  border: none;
+  color: rgb(54, 50, 50);
+  font-size: large;
+  margin-top: 110px;
+  padding: 30px;
+  display: inline-block;
+}
+
+#random_trans:hover {
+  background-color: #e2c35e;
 }
