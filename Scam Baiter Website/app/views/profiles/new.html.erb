@@ -1,36 +1,79 @@
-<h1>Profile#add</h1>
-<p>Find me in app/add/profile/add.html.erb</p>
-<br/>
+<html>
+  <body class= "profile-body">
+    <%= link_to("<< Back to List", profiles_path, :class => 'back-link') %>
+
+    <div class="profile-content">
+      <h2 class="text-center profile-title" >Create Profile</h2>
+      <div class = "profile-form-div">
+        <%= form_for(@newProfile, :url => profiles_path, :method =>'post' ) do |f| %>
+
+          <table summary="Profile form fields" class = 'profile-text profile-form'>
+
+            <tr>
+              <th>UserName: </th>
+              <td><%= f.text_field :username %></td>
+            </tr>
+
+            <tr>
+              <th>Password: </th>
+              <td><%= f.text_field :password %></td>
+            </tr>
+
+            <tr>
+                <th>Email: </th>
+                <td><%=f.text_field(:email) %></td>
+            </tr>
+
+            <tr>
+              <th>Address: </th>
+              <td><%= f.text_field(:address) %></td>
+            </tr>
 
 
-<form action ="/profiles" method="post">
-  <label for="username">Username:</label>
-  <input type="text" name="profile[username]"><br><br>
+            <tr>
+              <th>Phone Number: </th>
+              <td><%= f.text_field(:telephone) %></td>
+            </tr>
 
-  <label for="password">Password:</label>
-  <input type="text"name="profile[password]"><br><br>
 
-  <label for="address">Address:</label>
-  <input type="text" name="profile[address]"><br><br>
+            <tr>
+              <th>First Name: </th>
+              <td><%= f.text_field(:first_name) %></td>
+            </tr>
 
-  <label for="email">Email:</label>
-  <input type="text" name="profile[email]"><br><br>
 
-  <label for="telephone">Telephone:</label>
-  <input type="text" name="profile[telephone]"><br><br>
+            <tr>
+              <th>Last Name: </th>
+              <td><%=f.text_field(:last_name) %></td>
+            </tr>
 
-  <label for="first_name">First Name:</label>
-  <input type="text" name="profile[first_name]"><br><br>
+            <tr>
+              <th>Age: </th>
+              <td><%= f.text_field(:age) %></td>
+            </tr>
 
-  <label for="last_name">Last name:</label>
-  <input type="text" name="profile[last_name]"><br><br>
+            <tr>
+              <th>Gender: </th>
+              <td><%= f.text_field(:gender) %></td>
+            </tr>
 
-  <label for="age">Age:</label>
-  <input type="text" name="profile[age]"><br><br>
+            <tr>
+              <th>Admin Status: </th>
+              <td><%= f.text_field(:admin) %></td>
+            </tr>
 
-  <label for="gender">Gender:</label>
-  <input type="text" name="profile[gender]"><br><br>
 
-  <input type="submit" value="Create Profile">
-</form>
 
+            </table>
+          
+          <br/>
+          <div class="form-buttons">
+            <%= f.submit("Create Profile", :class => 'btn-profile', :id => "create-profile-btn") %>
+          </div>
+
+        <% end %>
+        </div>
+      
+    </div>
+  </body>
+</html>

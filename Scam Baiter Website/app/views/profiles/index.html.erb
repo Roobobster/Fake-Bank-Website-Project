@@ -1,3 +1,35 @@
-<h1>Profile#add</h1>
-<p>Find me in app/add/profile/add.html.erb</p>
-<br/>
+<html>
+  <body class= "profile-body">
+
+    
+
+    <div class="profile-content">
+
+
+      <h2 class="text-center profile-title" >Profiles</h2> 
+
+      <div class="p-4 text-center" > <%= link_to("Add a New Profile", new_profile_path, :class => 'btn-profile', id: "profile-new-button") %> </div>
+      <br/>
+      <table class="table profiles text-center">
+        <tr class="header">
+          <th width="0%">Username</th>
+          <th width="100%">Actions</th>
+        </tr>
+        
+        <% @profiles.each do |currentProfile| %>
+        <tr>
+          <td><%= currentProfile.username %></td>
+      
+          <td class="actions"> 
+            <%= link_to('Show', profile_path(currentProfile), :class => 'btn-profile', id: "profile-show-button") %>
+            <%= link_to('Edit', edit_profile_path(currentProfile), :class => 'btn-profile', id: "profile-edit-button") %>
+            <%= link_to('Delete', profile_path(currentProfile), :method => 'delete', :class => 'btn-profile', id: "profile-delete-button") %>
+          </td>
+        
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </body>
+</html>
+

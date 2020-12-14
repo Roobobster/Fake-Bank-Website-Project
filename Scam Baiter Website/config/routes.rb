@@ -5,11 +5,6 @@ Rails.application.routes.draw do
   #get 'admins/new', to: 'admins#new'
   #post 'admins', to: 'admins#create'
 
-  resources :admins do
-    member do
-      get :delete
-    end
-  end
 
   get 'faqs/index'
 
@@ -18,7 +13,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'contact/index'
 
-  resources :profiles
+  resources :profiles 
 
   get 'profile/view'
  
