@@ -49,7 +49,7 @@ class AccountsController < ApplicationController
         #@account = Account.new(account_params)
         profile_id = nil
         if (helpers.logged_in?)
-            profile_id = helpers.current_user.profiles_id
+            profile_id = helpers.current_user.id
             p "Profile: "
             p profile_id
         else
@@ -59,7 +59,7 @@ class AccountsController < ApplicationController
         if (profile_id)
             acctype = account_params[:account_type]
             p acctype
-            @account = Account.create(profiles_id: profile_id, account_type: acctype, amount: 0.0, )
+            @account = Account.create(profile_id: profile_id, account_type: acctype, amount: 0.0, )
             @account.save
             p "Created account with type"
             p @account.account_type

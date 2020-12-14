@@ -6,7 +6,7 @@
     <h2>Your Accounts</h2><hr>
     <% @accountlist.each do |account| %>
     <tr>
-        <td><%= "Profile ID: " + account.id.to_s if account.profiles_id %></td><br>
+        <td><%= "Account ID: " + account.id.to_s%></td><br>
         <td><%= "Account Balance: " + account.amount.to_s if account.amount %></td><br>
         <td><%= "Account Type: " + account.account_type.to_s if account.account_type %></td><br>
         <td><%= "Account Created: " + account.created_at.to_s if account.created_at %></td><br>
