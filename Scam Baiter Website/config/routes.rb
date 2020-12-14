@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+ 
+  get "accounts/index", to: "accounts#index"
+  post "accounts/index", to: "accounts#create"
 
   resources :admins do
     member do
@@ -30,12 +33,12 @@ Rails.application.routes.draw do
  
   # get "accounts/index", to: "accounts#index", as: "index"
 
+  get "accounts/viewedit", to: "accounts#viewedit", :as => :edit_acc_view
+  post "accounts/:id/", to: "accounts#updateaccount"
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-  
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

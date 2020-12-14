@@ -1,7 +1,8 @@
 class Account < ApplicationRecord 
-
+  
+    #belongs_to :profile
     has_many :transactions, dependent: :destroy
-    belongs_to :profile
+
 
     def transfer_balance(sender_account, receiver_account, amount_to_transfer)
         if sender_account.get_account_balance() >= amount_to_transfer and amount_to_transfer > 0 # Don't transfer negative balance, don't transfer 0 currency
@@ -25,4 +26,5 @@ class Account < ApplicationRecord
         newTransaction.save
         return newTransaction
     end
+
 end
