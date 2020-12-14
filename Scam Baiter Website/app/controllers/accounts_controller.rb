@@ -3,7 +3,7 @@ class AccountsController < ApplicationController
     def view
         profile_id = nil
         if (helpers.logged_in?)
-            profile_id = helpers.current_user.profiles_id
+            profile_id = helpers.current_user.id
         else
             #account1 = Account.create(profiles_id: 2, account_type: "Savings", amount: 0.0)
             #account1.save
@@ -11,7 +11,7 @@ class AccountsController < ApplicationController
             profile_id = 2
         end
         p profile_id
-        @accountlist = Account.where('profiles_id = ?', profile_id) #This becomes the list of accounts the current profile has
+        @accountlist = Account.where('profile_id = ?', profile_id) #This becomes the list of accounts the current profile has
         p @accountlist.size
     end
 
