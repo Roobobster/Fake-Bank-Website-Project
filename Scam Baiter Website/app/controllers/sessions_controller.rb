@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password]) 
       log_in(user)
       if user.admin==true
-        redirect_to('http://localhost:3000/admins/index')
+        redirect_to('http://localhost:3000/profiles')
       else
         redirect_to('http://localhost:3000')
       end

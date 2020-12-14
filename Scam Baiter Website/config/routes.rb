@@ -12,9 +12,7 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'contact/index'
 
-  get 'faqs/index'
-
-  resources :profiles
+  resources :profiles 
 
   resources :accounts do
     resources :transactions do
