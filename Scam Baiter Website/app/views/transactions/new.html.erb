@@ -1,0 +1,43 @@
+<%= render(:partial => 'backToList') %>
+
+<div class="transaction_new">
+    <h1>Add Transactions</h1>
+
+    <% if current_user.admin %>
+        <h5>You can choose to add a transaction automatically or manually</h5><br/>
+
+        <div class="add_transaction_columns">
+            <div class="add_transaction">
+                <h4>Add transaction automatically </h4>
+                <%= link_to("Add Random Transaction", add_rand_trans_account_transactions_path(@account), id:"random_trans") %>
+            </div>
+
+            <div class="add_transaction">
+                <h4>Add transaction manually </h4>
+                <%= form_for([@account, @transaction], :url => account_transactions_path(@account), :method => 'post') do |f| %>
+                    <%= render(:partial => 'form', :locals => {:f => f}) %>
+                    <%= f.submit("Add Transaction", :id => "submitBtn", :class => "form-buttons") %>
+                <% end %>
+            </div>
+        </div>
+
+    <% else %>
+        <%= render(:partial => 'warning') %>
+    <% end %>
+</div>
+
+<script>
+    $(document).ready(() => {
+        let submitBtn = document.querySelector('#submitBtn');
+        submitBtn.disabled = true;
+
+        let inputs = document.querySelectorAll('[type="text"]');
+        for (i = 0; i < inputs.length; i++) {
+            inputs[i].addEventListener('input', () => {
+                let values = [];
+                inputs.forEach(v => values.push(v.value));
+                submitBtn.disabled = values.includes('');
+            })
+        }
+    })
+</script>

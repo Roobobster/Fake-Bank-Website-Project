@@ -1,5 +1,8 @@
 <h1>Accounts Page</h1>
-<% if @accountlist.any? %>
+
+<% if !logged_in? %>
+    <h2>Please log in first</h2>  
+<% elsif @accountlist.any? %>
     <h2>Your Accounts</h2><hr>
     <% @accountlist.each do |account| %>
     <tr>
@@ -9,6 +12,7 @@
         <td><%= "Account Created: " + account.created_at.to_s if account.created_at %></td><br>
         <td><%= "Account Updated: " + account.updated_at.to_s if account.updated_at %></td><br>
         <%= link_to 'Edit', {:controller => "accounts", :action => "viewedit", :accid => account.id }%>
+        <%= link_to 'View Transactions', account_transactions_path(account) %><hr>
     </tr><hr>
 <% end %>
 <% else %>

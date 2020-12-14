@@ -1,19 +1,68 @@
-<h1>Profile#view</h1>
-<p>Find me in app/views/profile/view.html.erb</p>
-<br/>
+<html>
+  <body  class= "profile-body">
+    <%= link_to("<< Back to List", profiles_path, :class => 'back-link') %>
 
-<br/>
-<br/>
-<%= 'Name: ' + @loaded_profile.first_name + ' ' + @loaded_profile.last_name%>
-<br/>
-<%= 'Email: ' + @loaded_profile.email %>
-<br/>
-<%= 'address: ' + @loaded_profile.address %>
-<br/>
-<%= 'telephone: ' + @loaded_profile.telephone%>
-<br/>
-<%= 'age: ' + @loaded_profile.age.to_s %>
-<br/>
-<%= 'gender: ' + @loaded_profile.gender %>
-<br/>
+    <div class="profile-content">
+      <h2 class="text-center profile-title" >View Profile</h2>
+      <div class = "profile-form-div">
+          <table summary="Profile detail view" class = 'profile-text profile-form'>
+            <tr>
+              <th>Username: </th>
+              <td><%= @profile.username %></td>
+            </tr>
 
+            <tr>
+                <th>Email: </th>
+                <td><%= @profile.email %></td>
+            </tr>
+          
+            <tr>
+                <th>Address: </th>
+                <td><%= @profile.address %></td>
+            </tr>
+
+            <tr>
+                <th>Phone Number: </th>
+                <td><%= @profile.telephone %></td>
+            </tr>
+
+            <tr>
+                <th>First Name: </th>
+                <td><%= @profile.first_name %></td>
+            </tr>
+
+            <tr>
+                <th>Last Name: </th>
+                <td><%= @profile.last_name %></td>
+            </tr>
+
+            <tr>
+                <th>Age: </th>
+                <td><%= @profile.age %></td>
+            </tr>
+
+            <tr>
+                <th>Gender: </th>
+                <td><%= @profile.gender %></td>
+            </tr>
+
+            <tr>
+                <th>Admin Status: </th>
+                <td><%= @profile.admin %></td>
+            </tr>
+            
+            <tr>
+              <th>Created: </th>
+              <td><%= @profile.created_at %></td>
+            </tr>
+
+            <tr>
+              <th>Updated: </th>
+              <td><%= @profile.updated_at %></td>
+            </tr>
+
+          </table>
+      </div>
+    </div>
+  <body>
+</html>

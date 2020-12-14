@@ -1,5 +1,5 @@
 class Profile < ApplicationRecord
-    has_many :accounts
+    has_many :accounts, dependent: :destroy
     has_secure_password
     validates :username, presence: true,
                          length: {minimum: 4, maximum: 30},

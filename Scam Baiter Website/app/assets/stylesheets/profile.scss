@@ -1,3 +1,158 @@
 // Place all the styles related to the Profile controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#profile-delete-button {
+    border: 2px solid #913a3ad0;
+    background: #c24e4ed0;
+}
+
+#profile-edit-button {
+    border: 2px solid #295caace;
+    background: #347ae2ce;
+    
+}
+
+#profile-show-button {
+    border: 2px solid #a15d25c4;
+    background: #ca742ec4;
+}
+
+#profile-new-button {
+    border: 2px solid #2b7528d3;
+    background: #369933d3; 
+}
+
+html{
+    height: 100%;
+}
+
+
+   
+.profile-body { 
+    min-height: 100%;
+
+    background-image: url("https://wallpapercave.com/wp/wp2546203.jpg");
+    
+    //background-image: url("https://i.pinimg.com/originals/86/9f/13/869f1342f1d5d15337b2bbf470ad2382.jpg");
+    background-size: cover; 
+}
+
+.profile-title{
+    vertical-align: middle;
+    font-size: 45px;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: white;
+}
+
+
+.profile-content{
+    font-family: 'Spartan', sans-serif;
+    font-style: normal;
+    
+    color: rgb(255, 255, 255);
+    padding: 50px 100px 0px 100px;
+    width: 100%;
+   
+}
+
+#profile-new{
+    background-color: rgb(170, 168, 187)
+}
+
+#create-profile-btn{
+    margin-top: 25px;
+    border: 2px solid #2b7528d3;
+    background: #369933d3; 
+    width: 450px;
+}
+
+#edit-profile-btn{
+    margin-top: 25px;
+    border: 2px solid #295caace;
+    background: #347ae2ce; 
+    width: 450px;
+}
+
+.btn-profile{
+    
+    font-size: 16px;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    padding: 10px 10px 10px 10px;
+    color: rgba(255, 255, 255, 0.801);
+}
+
+.profile-form th{
+    padding-right: 5px;
+}
+.profile-form{
+    margin-top: 25px;
+    text-align: center;
+    color :   black;
+    background-color: rgba(255, 255, 255, 0.753);
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+}
+
+.profile-text th{
+    font-size: 25px;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: white;
+}
+
+.profile-form-div{
+    
+    display: block;
+    text-align: center;
+    
+}
+
+.profile-form{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.table.profiles {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    overflow-y: scroll; 
+    height: 600px;
+    display: block;
+    border-radius: 16px;
+    color: #fff;
+    width: 100%;
+}
+
+
+.table.profiles td {
+    font-family: 'Spartan', sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    line-height: 1.4;
+    background-color: rgba(255, 255, 255, 0.753);
+    border-color: rgb(53, 53, 53);
+}
+
+.table.profiles th {
+    top:0;
+    position: sticky;
+    font-family: 'Spartan', sans-serif;
+    font-style: normal;
+    font-size: 23px;
+    color:rgb(53, 53, 53);
+    line-height: 1.4;
+    text-transform: uppercase;
+    background-color: rgba(150, 148, 148, 0.945);
+    border: none;
+}
+
+.profile-new {
+    border-radius: 16px;
+}

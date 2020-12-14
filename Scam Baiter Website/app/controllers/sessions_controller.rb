@@ -6,10 +6,13 @@ class SessionsController < ApplicationController
   def create
     user=Profile.find_by(username: params[:session][:username].downcase)
    
-    if user && user.authenticate(params[:session][:password]) && user.admin==true
+    if user && user.authenticate(params[:session][:password]) 
       log_in(user)
-      redirect_to('http://localhost:3000')
-      
+      if user.admin==true
+        redirect_to('http://localhost:3000/profiles')
+      else
+        redirect_to('http://localhost:3000')
+      end
     else
       flash.now[:alert] = "username or password is invalid"
       render "new"
