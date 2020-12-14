@@ -1,6 +1,6 @@
 class Account < ApplicationRecord 
 
-    has_many :transactions
+    has_many :transactions, dependent: :destroy
     belongs_to :profile
 
     def transfer_balance(sender_account, receiver_account, amount_to_transfer)
@@ -17,5 +17,12 @@ class Account < ApplicationRecord
     def modify_balance(amount_to_modify)
         #This definitely wants more validation checks...
         account_balance = account_balance + amount_to_modify
+    end
+
+    def add_random_transactions
+        newTransaction = Transaction.new(account_id: self.id)
+        newTransaction.randomise
+        newTransaction.save
+        return newTransaction
     end
 end

@@ -1,0 +1,17 @@
+<%= render(:partial => 'backToList') %>
+
+<div class="transaction_edit">
+  <h1>Edit Transaction</h1>
+
+  <% if current_user.admin %>
+    <%= form_for([@account, @transaction]) do |f| %>
+      <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+      <%= f.submit("Update Transaction", :class => "form-buttons") %>
+
+    <% end %>
+  <% else %>
+    <%= render(:partial => 'warning') %>
+  <% end %>
+  
+</div>

@@ -1,28 +1,36 @@
 Rails.application.routes.draw do
 
-  #get 'admins/index'
-  #get '/admins/:id', to: 'admins#show'
-  #get 'admins/new', to: 'admins#new'
-  #post 'admins', to: 'admins#create'
-
   resources :admins do
     member do
       get :delete
     end
   end
 
-  get 'faqs/index'
-
   root 'home#index'
   get 'faqs/index'
+
   get 'home/index'
   get 'contact/index'
 
+  get 'faqs/index'
+
   resources :profiles
+
+  resources :accounts do
+    resources :transactions do
+      member do
+        get :delete
+      end
+
+      collection do 
+        get 'add_rand_trans'
+      end
+    end
+  end
 
   get 'profile/view'
  
-  get "accounts/index", to: "accounts#index", as: "index"
+  # get "accounts/index", to: "accounts#index", as: "index"
 
 
   get '/login', to: 'sessions#new'
