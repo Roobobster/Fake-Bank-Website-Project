@@ -16,23 +16,26 @@
   <body>
   
   <% unless controller_name == "sessions" %>
-  <nav class="navbar navbar-expand-md navbar-light">
+  <nav class="navbar navbar-expand-md navbar-light navbar-fixed-top">
     <div id="app" class="container">
         <div class="navbar-left nav-logo"> 
             <%= link_to root_url do %>
                 <%= image_tag("/images/fox.png", :size => "60x75")%>
             <% end %>
         </div>
-        <a class="navbar-brand-title">Fox</a>
+        <h1 class="navbar-brand-title">Fox</h1>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item">
                     <%= link_to "Contact us", {:controller => "contact", :action => "index"} %>
                 </li>
+                <li class="nav-item">
+                    <%= link_to "Accounts", {:controller => "accounts", :action => "index"} %>
+                </li>
 
                 <% if !logged_in? %>
                     <li class="nav-item">
-                        <%= link_to "Register", '#' %>
+                        <%= link_to "Register", {:controller => "home", :action => "register"} %>
                     </li>
                     <li class="nav-item">
                         <%= link_to "Login", {:controller=> "sessions",:action => "new"} %>

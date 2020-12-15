@@ -65,21 +65,23 @@ html{
 }
 
 #profile-new{
-    background-color: rgb(170, 168, 187)
+    background-color: rgb(135, 126, 160)
 }
 
 #create-profile-btn{
     margin-top: 25px;
-    border: 2px solid #2b7528d3;
-    background: #369933d3; 
+    background: #195817d3; 
+    font-family: 'Raleway';
     width: 450px;
+    border: hidden;
 }
 
 #edit-profile-btn{
-    margin-top: 25px;
-    border: 2px solid #295caace;
-    background: #347ae2ce; 
+    //margin-top: 25px;
+    background: #225197;
+    font-family: 'Raleway';
     width: 450px;
+    border: hidden;
 }
 
 .btn-profile{
@@ -100,7 +102,7 @@ html{
     text-align: center;
     color :   black;
     background-color: rgba(255, 255, 255, 0.753);
-    border-radius: 10px;
+    border-radius: 10px; 
     padding: 10px 10px 10px 10px;
 }
 
