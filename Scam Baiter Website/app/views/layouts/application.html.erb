@@ -4,30 +4,64 @@
     <title>ScamBaiterWebsite</title>
     <%= csrf_meta_tags %>
 
+    <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+<!--
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+-->
   </head>
 
   <body>
-    <div class="navbar">
-      <ul>
-          <%= link_to root_url do %>
-              <%= image_tag("/images/fox.png", :size => "80x100")%>
-          <% end %>
+  
+  <% unless controller_name == "sessions" %>
+  <nav class="navbar navbar-expand-md navbar-light">
+    <div id="app" class="container">
+        <div class="navbar-left nav-logo"> 
+            <%= link_to root_url do %>
+                <%= image_tag("/images/fox.png", :size => "60x75")%>
+            <% end %>
+        </div>
+        <a class="navbar-brand-title">Fox</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item">
+                    <%= link_to "Contact us", {:controller => "contact", :action => "index"} %>
+                </li>
 
-          <li><%= link_to "Contact us", {:controller => "contact", :action => "index"} %></li>
+                <% if !logged_in? %>
+                    <li class="nav-item">
+                        <%= link_to "Register", '#' %>
+                    </li>
+                    <li class="nav-item">
+                        <%= link_to "Login", {:controller=> "sessions",:action => "new"} %>
+                    </li>
 
-          <% if !logged_in? %>
-              <li><%= "Register" %></li>
-              <li><%= link_to "Login", {:controller=> "sessions",:action => "new"} %></li>
-          <% else %>
-              <li><%= link_to "Log Out", {:controller=> "sessions",:action => "destroy"} %></li>
-              <li><%= @greeting %>, <%= current_user.username %></li>
-          <% end %>
-      </ul>
+                <% else %>
+                    <% if current_user.admin==true %>
+                        <li class="nav-item">
+                            <%= link_to "Profiles", profiles_path %>
+                        </li>
+                    <% end %>
+                    
+                    <li class="nav-item">
+                       <%= link_to "Log Out", {:controller=> "sessions",:action => "destroy"} %>
+                    </li>
+                    <li class="nav-greeting">
+                       <%= @greeting %>, <%= current_user.username %>
+                    </li>
+                <% end %>
+
+            </ul>
+        </div>
+    
     </div>
+  </nav>
+
 
     <button id="backToTopBtn" title="Go to top">Top</button>
+  <% end %>
     
     <%= yield %>
   </body>
