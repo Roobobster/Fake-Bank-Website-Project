@@ -21,8 +21,12 @@
               <li><%= "Register" %></li>
               <li><%= link_to "Login", {:controller=> "sessions",:action => "new"} %></li>
           <% else %>
+              <%if current_user.admin == true%>
+                <li><%= link_to("Admin Panel", profiles_path) %></li>
+              <%end %>
               <li><%= link_to "Log Out", {:controller=> "sessions",:action => "destroy"} %></li>
               <li><%= @greeting %>, <%= current_user.username %></li>
+              
           <% end %>
       </ul>
     </div>

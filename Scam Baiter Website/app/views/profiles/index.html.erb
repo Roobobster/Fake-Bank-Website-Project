@@ -8,7 +8,7 @@
 
       <h2 class="text-center profile-title" >Profiles</h2> 
 
-      <div class="p-4 text-center" > <%= link_to("Add a New Profile", new_profile_path, :class => 'btn-profile', id: "profile-new-button") %> </div>
+      <div class="p-4 text-center" > <%= link_to("Add a New Profile", new_profile_path, :class => 'btn-profile new-button', id: "profile-new-button") %> </div>
       <br/>
       <table class="table profiles text-center">
         <tr class="header">
@@ -21,9 +21,9 @@
           <td><%= currentProfile.username %></td>
       
           <td class="actions"> 
-            <%= link_to('Show', profile_path(currentProfile), :class => 'btn-profile', id: "profile-show-button") %>
-            <%= link_to('Edit', edit_profile_path(currentProfile), :class => 'btn-profile', id: "profile-edit-button") %>
-            <%= link_to('Delete', profile_path(currentProfile), :method => 'delete', :class => 'btn-profile', id: "profile-delete-button") %>
+            <%= link_to('Show', profile_path(currentProfile), :class => 'btn-profile show-button', id: "profile-show-button") %>
+            <%= link_to('Edit', edit_profile_path(currentProfile), :class => 'btn-profile edit-button', id: "profile-edit-button") %>
+            <%= link_to('Delete', profile_path(currentProfile), :method => 'delete', :class => 'btn-profile delete-button', id: "profile-delete-button") %>
           </td>
         
         </tr>

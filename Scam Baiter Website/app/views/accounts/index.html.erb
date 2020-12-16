@@ -1,27 +1,43 @@
-<h1>Accounts Page</h1>
 
-<% if !logged_in? %>
-    <h2>Please log in first</h2>  
-<% elsif @accountlist.any? %>
-    <h2>Your Accounts</h2><hr>
-    <% @accountlist.each do |account| %>
-    <tr>
-        <td><%= "Account ID: " + account.id.to_s%></td><br>
-        <td><%= "Account Balance: " + account.amount.to_s if account.amount %></td><br>
-        <td><%= "Account Type: " + account.account_type.to_s if account.account_type %></td><br>
-        <td><%= "Account Created: " + account.created_at.to_s if account.created_at %></td><br>
-        <td><%= "Account Updated: " + account.updated_at.to_s if account.updated_at %></td><br>
-        <%= link_to 'Edit', {:controller => "accounts", :action => "viewedit", :accid => account.id }%>
-        <%= link_to 'View Transactions', account_transactions_path(account) %><hr>
-    </tr><hr>
-<% end %>
-<% else %>
-    <h2>No accounts. Create one?</h2>
-<% end %>
-<h1>Create Account</h1>
+<html>
+  <body class= "profile-body">
+    <h1>Accounts Page</h1>
+    
+
+    <div class="account-content">
 
 
-<%= form_for :account do |f| %>
-    <%= f.select :account_type, [["Savings", "Savings"], ["Basic", "Basic"], ["Student", "Student"]], selected: "Savings" %>
-    <%= f.submit "Create Account"%>
-<% end %>
+      <h2 class="text-center account-title" >Account</h2> 
+
+      <div class="p-4 text-center" > <%= link_to("Add a New Account", new_account_path(id: @profile_id), :class => 'btn-account new-button', id: "account-new-button") %> </div>
+      <br/>
+      <table class="table accounts text-center">
+            <tr class="header">
+              <th width="0%">Account ID</th>
+              <th width="10%">Amount</th>
+              <th width="20%">Type</th>
+              <th width="100%">Action</th>
+            </tr>
+            
+            <% @accounts.each do |account| %>
+                <tr>
+                <td><%= account.id %></td>
+                <td><%= account.amount %></td>
+                <td><%= account.account_type %></td>
+
+            
+                <td class="actions"> 
+                    <%= link_to('Show', account_path(account), :class => 'btn-profile show-button', id: "profile-show-button") %>
+                    <%= link_to('Edit', edit_account_path(account, profile_id: @profile_id), :class => 'btn-profile edit-button', id: "profile-edit-button") %>
+                    <%= link_to('Delete', account_path(account), :method => 'delete', :class => 'btn-profile delete-button', id: "profile-delete-button") %>
+                </td>
+                
+                </tr>
+            <% end %>
+        </table>
+    </div>
+  </body>
+</html>
+
+
+

@@ -1,15 +1,29 @@
-<h1>Edit Account</h1>
-<hr>
 
+<html>
+  <body  class= "account-body">
+    <%= link_to("<< Back to List", accounts_path(id: @account.profile_id), :class => 'back-link') %>
 
-<% if @current_account %>
-    <%= form_for :account, :url => {:action => "update", :accid => @current_account}  do |f| %>
-        <td><%= "Account ID: " + @current_account.id.to_s %></td><br>
-        <td><%= "Account Balance: " + @current_account.amount.to_s%></td><br>
-        <td><%= "Account Type: " + @current_account.account_type.to_s%></td>
-        <%= f.select :account_type, [["Savings", "Savings"], ["Basic", "Basic"], ["Student", "Student"]], selected: "Savings" %><br>
-        <td><%= "Account Created: " + @current_account.created_at.to_s%></td><br>
-        <td><%= "Account Updated: " + @current_account.updated_at.to_s %></td><br>
-        <%= f.submit "Update Account"%>
-    <% end %>
-<% end %>
+    <div class="account-content">
+      <h2 class="text-center account-title" >View Account</h2>
+      <div class = "account-form-div">
+          <table summary="Account detail view" class = 'account-text account-form'>
+            <tr>
+              <th>Account ID: </th>
+              <td><%= @account.id %></td>
+            </tr>
+
+            <tr>
+                <th>Account Balance: </th>
+                <td><%= @account.amount %></td>
+            </tr>
+
+            <tr>
+                <th>Type: </th>
+                <td><%= @account.account_type %></td>
+            </tr>
+
+          </table>
+      </div>
+    </div>
+  <body>
+</html>

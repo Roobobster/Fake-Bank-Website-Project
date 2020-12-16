@@ -1,0 +1,36 @@
+
+<html>
+  <body class= "account-body">
+    <%= link_to("<< Back to List", accounts_path(id: @profile_id), :class => 'back-link') %>
+
+    <div class="account-content">
+      <h2 class="text-center account-title" >Create Account</h2>
+      <div class = "account-form-div">
+        <%= form_for( @account, :url => accounts_path(id: @profile_id), :method =>'post') do |f| %>
+
+          <table summary="Account form fields" class = 'account-text account-form'>
+
+            <tr>
+              <th>Amount: </th>
+              <td><%= f.text_field :amount %></td>
+            </tr>
+
+            <tr>
+              <th>Type: </th>
+              <td><%= f.select :account_type, [["Savings", "Savings"], ["Basic", "Basic"], ["Student", "Student"]], selected: "Savings" %></td>
+            </tr>
+            
+
+            </table>
+          
+          <br/>
+          <div class="account-form-buttons">
+            <%= f.submit("Create Account", :class => 'btn-account', :id => "create-account-btn") %>
+          </div>
+
+        <% end %>
+        </div>
+      
+    </div>
+  </body>
+</html>

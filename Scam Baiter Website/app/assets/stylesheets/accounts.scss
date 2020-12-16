@@ -3,34 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.delete-button {
-    border: 2px solid #913a3ad0;
-    background: #c24e4ed0;
-}
 
-.edit-button {
-    border: 2px solid #295caace;
-    background: #347ae2ce;
-    
-}
-
-.show-button {
-    border: 2px solid #a15d25c4;
-    background: #ca742ec4;
-}
-
-.new-button {
-    border: 2px solid #2b7528d3;
-    background: #369933d3; 
-}
-
-html{
-    height: 100%;
-}
-
-
-   
-.profile-body { 
+.account-body { 
     min-height: 100%;
 
     background-image: url("https://wallpapercave.com/wp/wp2546203.jpg");
@@ -39,7 +13,7 @@ html{
     background-size: cover; 
 }
 
-.profile-title{
+.account-title{
     vertical-align: middle;
     font-size: 45px;
     -webkit-text-stroke: 1px black;
@@ -47,7 +21,7 @@ html{
 }
 
 
-.profile-content{
+.account-content{
     font-family: 'Spartan', sans-serif;
     font-style: normal;
     
@@ -57,25 +31,25 @@ html{
    
 }
 
-#profile-new{
+#account-new{
     background-color: rgb(170, 168, 187)
 }
 
-#create-profile-btn{
+#create-account-btn{
     margin-top: 25px;
     border: 2px solid #2b7528d3;
     background: #369933d3; 
     width: 450px;
 }
 
-#edit-profile-btn{
+#edit-account-btn{
     margin-top: 25px;
     border: 2px solid #295caace;
     background: #347ae2ce; 
     width: 450px;
 }
 
-.btn-profile{
+.btn-account{
     vertical-align: middle;
     font-size: 16px;
     border-radius: 10px;
@@ -85,10 +59,10 @@ html{
     color: rgba(255, 255, 255, 0.801);
 }
 
-.profile-form th{
+.account-form th{
     padding-right: 5px;
 }
-.profile-form{
+.account-form{
     text-align: center;
     color :   black;
     background-color: rgba(255, 255, 255, 0.753);
@@ -96,14 +70,14 @@ html{
     padding: 10px 10px 10px 10px;
 }
 
-.profile-text th{
+.account-text th{
     font-size: 25px;
     -webkit-text-stroke: 1px black;
     -webkit-text-fill-color: white;
 }
 
 
-.profile-form-div{
+.account-form-div{
     margin-top: 25px;
     display: block;
     text-align: center;
@@ -111,14 +85,14 @@ html{
 }
 
 
-.profile-form{
+.account-form{
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
     text-align: left;
 }
 
-.table.profiles {
+.table.accounts {
     margin-left: auto;
     margin-right: auto;
     max-width: 800px;
@@ -131,7 +105,7 @@ html{
 }
 
 
-.table.profiles td {
+.table.accounts td {
     font-family: 'Spartan', sans-serif;
     font-style: normal;
     font-size: 20px;
@@ -141,7 +115,7 @@ html{
     border-color: rgb(53, 53, 53);
 }
 
-.table.profiles th {
+.table.accounts th {
     top:0;
     position: sticky;
     font-family: 'Spartan', sans-serif;
@@ -154,6 +128,6 @@ html{
     border: none;
 }
 
-.profile-new {
+.account-new {
     border-radius: 16px;
 }

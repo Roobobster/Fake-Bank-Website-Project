@@ -1,0 +1,32 @@
+<html>
+  <body  class= "account-body">
+    <%= link_to("<< Back to List", accounts_path(id: @profile_id), :class => 'back-link') %>
+
+    <div class="account-content">
+      <h2 class="text-center account-title" >Update Account</h2>
+      <div class = "account-data">
+        <div class = "account-form-div">
+            <%= form_for(@account) do |f| %>
+
+              <table summary="Account form fields" class = 'account-text profile-form'>
+
+                <tr>
+                    <th>Amount: </th>
+                    <td><%= f.text_field :amount %></td>
+                </tr>
+
+                <tr>
+                    <th>Type: </th>
+                    <td><%= f.select :account_type, [["Savings", "Savings"], ["Basic", "Basic"], ["Student", "Student"]], selected: "Savings" %></td>
+                </tr>
+              </table>
+
+              <div class="account-form-buttons">
+                <%= f.submit("Update Account", :class => 'btn-account edit-button', :id => "edit-account-btn") %>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <body>
+</html>

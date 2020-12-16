@@ -15,9 +15,15 @@ class ProfilesController < ApplicationController
 
   def edit
     @profile=Profile.find(params[:id])
+    
   end
 
   def update
+    if params[:admin] == "false"
+      params[:admin] = false
+    else
+      params[:admin] = true
+    end
     @profile=Profile.find(params[:id])
     if @profile.update(profile_params)
       redirect_to(profile_path(@profile))
