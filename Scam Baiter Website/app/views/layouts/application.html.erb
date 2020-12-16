@@ -7,10 +7,8 @@
     <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %> -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
-<!--
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
--->
   </head>
 
   <body>
@@ -20,7 +18,7 @@
     <div id="app" class="container">
         <div class="navbar-left nav-logo"> 
             <%= link_to root_url do %>
-                <%= image_tag("/images/fox.png", :size => "60x75")%>
+                <%= image_tag("/images/fox.png", :size => "55x70")%>
             <% end %>
         </div>
         <h1 class="navbar-brand-title">Fox</h1>
@@ -46,6 +44,18 @@
                         <li class="nav-item">
                             <%= link_to "Profiles", profiles_path %>
                         </li>
+
+                        <div class="dropdown">
+                            <button class="dropbtn">Customise
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropdown-content">
+                                <a href="#">Original Theme</a>
+                                <a href="#">Dark Theme</a>
+                                <a href="#">Pastel Theme</a>
+                                <a href="#">Neon Lights Theme</a>
+                            </div>
+                        </div>
                     <% end %>
                     
                     <li class="nav-item">
