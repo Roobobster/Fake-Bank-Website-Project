@@ -26,8 +26,8 @@
     </tr>
   </table>
 
-  <%= link_to("Edit transaction", edit_account_transaction_path(@account, @transaction), :class => 'link_to_actions')  if current_user.admin %>
-  <%= link_to("Delete transaction", delete_account_transaction_path(@account, @transaction), :class => 'link_to_actions') if current_user.admin %>
+  <%= link_to("Edit transaction", edit_transaction_path(@transaction, account_id: @account ), :class => 'link_to_actions')  if current_user.admin %>
+  <%= link_to("Delete transaction", delete_transaction_path(@transaction,account_id:@account), :class => 'link_to_actions') if current_user.admin %>
 
   <br/><br/>
 

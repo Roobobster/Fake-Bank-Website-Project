@@ -4,7 +4,7 @@
   <h1>Edit Transaction</h1>
 
   <% if current_user.admin %>
-    <%= form_for([@account, @transaction]) do |f| %>
+    <%= form_for(@transaction, :url => transaction_path(account_id: @account)) do |f| %>
       <%= render(:partial => 'form', :locals => {:f => f}) %>
 
       <%= f.submit("Update Transaction", :class => "form-buttons") %>

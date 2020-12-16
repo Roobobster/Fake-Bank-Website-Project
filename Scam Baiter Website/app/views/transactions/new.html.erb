@@ -9,12 +9,12 @@
         <div class="add_transaction_columns">
             <div class="add_transaction">
                 <h4>Add transaction automatically </h4>
-                <%= link_to("Add Random Transaction", add_rand_trans_account_transactions_path(@account), id:"random_trans") %>
+                <%= link_to("Add Random Transaction", add_rand_trans_transactions_path(account_id: @account), id:"random_trans") %>
             </div>
 
             <div class="add_transaction">
                 <h4>Add transaction manually </h4>
-                <%= form_for([@account, @transaction], :url => account_transactions_path(@account), :method => 'post') do |f| %>
+                <%= form_for([@account, @transaction], :url => transactions_path(account_id: @account), :method => 'post') do |f| %>
                     <%= render(:partial => 'form', :locals => {:f => f}) %>
                     <%= f.submit("Add Transaction", :id => "submitBtn", :class => "form-buttons") %>
                 <% end %>

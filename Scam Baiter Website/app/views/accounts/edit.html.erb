@@ -4,6 +4,9 @@
 
     <div class="account-content">
       <h2 class="text-center account-title" >Update Account</h2>
+      <div class="p-4 text-center" > 
+        <%= link_to("Transaction Menu", transactions_path(account_id: @account.id), :class => 'btn-profile edit-button', id: "account-index-button") %>      
+      </div>
       <div class = "account-data">
         <div class = "account-form-div">
             <%= form_for(@account) do |f| %>

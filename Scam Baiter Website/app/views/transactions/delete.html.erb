@@ -5,7 +5,7 @@
 
     <% if current_user.admin %>
 
-        <%= form_for([@account, @transaction], :method => 'delete') do |f| %>
+        <%= form_for([@account, @transaction], :url => transaction_path(@transaction, account_id: @account.id), :method => 'delete') do |f| %>
 
             <h5>
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
@@ -16,7 +16,7 @@
 
             <br/> 
 
-            <%= link_to("Show details of this transaction", account_transaction_path(@account, @transaction), :class => 'link_to_actions') %>
+            <%= link_to("Show details of this transaction", transaction_path(@transaction, account_id: @account ), :class => 'link_to_actions') %>
 
             <%= f.submit("Delete Transaction", :class => "form-buttons") %>
 

@@ -45,7 +45,7 @@ class AccountsController < ApplicationController
     def create
         @profile_id = params[:id];
 
-        @account = Account.create(profile_id: @profile_id, account_type: account_params[:account_type], amount: 0.0, )
+        @account = Account.create(profile_id: @profile_id, account_type: account_params[:account_type], amount:  account_params[:amount] )
         @account.save
 
         redirect_to (accounts_path(id: @profile_id))
