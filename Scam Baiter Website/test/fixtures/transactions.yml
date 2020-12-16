@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  id: 1
   account_id: 1
   transaction_datetime: 2020-11-23 14:01:35
   amount: 1.5
@@ -8,6 +9,7 @@ one:
   transactor: MyString
 
 two:
+  id: 2
   account_id: 2
   transaction_datetime: 2020-11-22 14:01:35
   amount: 1.5

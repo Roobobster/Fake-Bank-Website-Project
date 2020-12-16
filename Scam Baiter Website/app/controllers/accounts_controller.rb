@@ -8,9 +8,9 @@ class AccountsController < ApplicationController
         else
             profile_id = 2
         end
-        p profile_id
+        # p profile_id
         @accountlist = Account.where('profile_id = ?', profile_id) #This becomes the list of accounts the current profile has
-        p @accountlist.size
+        # p @accountlist.size
     end
 
     

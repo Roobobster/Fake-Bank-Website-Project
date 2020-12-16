@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
       if user.admin==true
         redirect_to('http://localhost:3000/profiles')
       else
-        redirect_to('http://localhost:3000')
+        # redirect_to('http://localhost:3000')
+        redirect_to root_url
       end
     else
       flash.now[:alert] = "username or password is invalid"

@@ -16,20 +16,18 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(() => {
-    
+$(document).ready(() => {    
     window.onscroll = () => {
         var backToTopBtn = document.getElementById("backToTopBtn");
 
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             backToTopBtn.style.display = "block";
+            backToTopBtn.onclick = (function() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }) 
         } else {
             backToTopBtn.style.display = "none";
         }
     }
-
-    $("#backToTopBtn").click(function() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }) 
 })

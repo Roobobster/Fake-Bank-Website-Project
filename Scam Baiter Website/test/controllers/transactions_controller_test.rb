@@ -3,16 +3,21 @@ require 'test_helper'
 class TransactionsControllerTest < ActionDispatch::IntegrationTest
   setup do 
     @transaction = transactions(:one)
+    @account_id = @transaction.account_id
   end
 
-  # test "should get index" do
-  #   # get :index, :account_id=> 1
-  #   get transactions_url
+  test "should get index" do
+    get url_for(:controller => "transactions", :action => "index", :account_id => @account_id)
+    assert_response :success
+  end
+
+  # test "should get show" do
+  #   get url_for(:controller => "transactions", :action => "show", :account_id => @account_id, :id => @transaction.id)
   #   assert_response :success
   # end
 
   # test "should get new" do
-  #   get transactions_new_url
+  #   get url_for(:controller => "transactions", :action => "new", :account_id => @account_id)
   #   assert_response :success
   # end
 
@@ -26,9 +31,5 @@ class TransactionsControllerTest < ActionDispatch::IntegrationTest
   #   assert_response :success
   # end
 
-  # test "should get show" do
-  #   get transactions_show_url
-  #   assert_response :success
-  # end
 
 end

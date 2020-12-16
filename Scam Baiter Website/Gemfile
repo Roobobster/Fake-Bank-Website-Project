@@ -31,6 +31,7 @@ gem 'bootstrap_form', "~> 4.0"
 gem 'bootstrap', "~> 4.0"
 
 gem 'bcrypt'
+gem 'rails-controller-testing'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
