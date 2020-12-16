@@ -17,11 +17,11 @@
 <% end %>
 <% else %>
     <h2>No accounts. Create one?</h2>
-<% end %>
-<h1>Create Account</h1>
 
+    <h1>Create Account</h1>
 
-<%= form_for :account do |f| %>
-    <%= f.select :account_type, [["Savings", "Savings"], ["Basic", "Basic"], ["Student", "Student"]], selected: "Savings" %>
-    <%= f.submit "Create Account"%>
+    <%= form_for :account do |f| %>
+        <%= f.select :account_type, [["Savings", "Savings"], ["Basic", "Basic"], ["Student", "Student"]], selected: "Savings" %>
+        <%= f.submit "Create Account"%>
+    <% end %>
 <% end %>
