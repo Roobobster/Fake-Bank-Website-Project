@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'home/index'
   get 'contact/index'
+  get 'home/register'
 
   resources :accounts
   resources :profiles 
