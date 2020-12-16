@@ -11,7 +11,7 @@ class ProfileTest < ActiveSupport::TestCase
 
   test "profile with non-matching passwords is invalid" do
     @profile.password = 'thehuman'
-    asset_not @profile.valid?
+    assert_not @profile.valid?
   end
 
   test "username should be at least 4 characters" do
@@ -19,7 +19,7 @@ class ProfileTest < ActiveSupport::TestCase
     assert_not @profile.valid?
   end
 
-  test "username should be at least 4 characters" do
+  test "username should be at least 4 characters 2" do
     @profile.username = "x" * 31
     assert_not @profile.valid?
   end
@@ -31,10 +31,9 @@ class ProfileTest < ActiveSupport::TestCase
 
   test "username should be unique" do
     copy_profile = @profile.dup
-    copy_profile.username = @copy_profile.username.upcase
+    copy_profile.username = @profile.username.upcase
     @profile.save
     assert_not copy_profile.valid?
-  end
   end
 
   test "username should have at least 6 characters" do

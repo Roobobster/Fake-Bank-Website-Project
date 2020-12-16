@@ -1,19 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  transaction_id: 
-  account_id: 
+  account_id: 1
   transaction_datetime: 2020-11-23 14:01:35
   amount: 1.5
   message: MyText
-  recipient: MyString
-  payee: MyString
+  transactor: MyString
 
 two:
-  transaction_id: 
-  account_id: 
-  transaction_datetime: 2020-11-23 14:01:35
+  account_id: 2
+  transaction_datetime: 2020-11-22 14:01:35
   amount: 1.5
   message: MyText
-  recipient: MyString
-  payee: MyString
+  transactor: MyString
