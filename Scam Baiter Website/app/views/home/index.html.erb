@@ -1,32 +1,36 @@
-<%= image_tag("/images/homeImage.jpg", style: "width:100%; height:auto; text-align: center;")%>
-<p id=notice><%= notice %></p> <!--make prettier later-->
-<div style="padding: 30px 0;">
-    <div class="columns">
-        <div class="column"> 
-            <h3>Products</h3>
-            <p>Current Accounts</p>
-            <p>Savings</p>
-            <p>Credit Cards</p>
-            <p>Loans</p>
-            <p>Mortgages</p>
-            <p>Insurance</p>
-            <p>Overdrafts</p>
+<html>
+    <body class= "background">
+        <p id=notice><%= notice %></p> <!--make prettier later-->
+        <div style="padding: 30px 0;">
+            <div class="columns">
+                <div class="column"> 
+                    <h3>Products</h3>
+                    <p>Current Accounts</p>
+                    <p>Savings</p>
+                    <p>Credit Cards</p>
+                    <p>Loans</p>
+                    <p>Mortgages</p>
+                    <p>Insurance</p>
+                    <p>Overdrafts</p>
+                </div>
+                
+                <div class="column">
+                    <h3>Help and Support</h3>
+                    <p><%= link_to "Contact us", {:controller => "contact", :action => "index"} %></p>
+                    <p><%= link_to "FAQs", {:controller => "faqs", :action => "index"} %></p>
+                    <p>Switch to Bank</p>
+                    <p>Protect your money</p>
+                    <p>Help with bereavement</p>
+                </div>
+                
+                <div class="column">
+                    <h3>Important Notices</h3>
+                    <p>Coronavirus (COVID-19)</p>
+                    <p>Accessibility</p>
+                    <p>Privacy Policy</p>
+                </div>
+            </div>
         </div>
-        
-        <div class="column">
-            <h3>Help and Support</h3>
-            <p><%= link_to "Contact us", {:controller => "contact", :action => "index"} %></p>
-            <p><%= link_to "FAQs", {:controller => "faqs", :action => "index"} %></p>
-            <p>Switch to Bank</p>
-            <p>Protect your money</p>
-            <p>Help with bereavement</p>
-        </div>
-        
-        <div class="column">
-            <h3>Important Notices</h3>
-            <p>Coronavirus (COVID-19)</p>
-            <p>Accessibility</p>
-            <p>Privacy Policy</p>
-        </div>
-    </div>
-</div>
+    </body>
+</html>
+

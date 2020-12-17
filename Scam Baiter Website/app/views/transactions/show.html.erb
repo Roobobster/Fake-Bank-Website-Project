@@ -1,36 +1,41 @@
-<%= render(:partial => 'backToList') %>
+<html>
+    <body class= "background">
+        <%= render(:partial => 'backToList') %>
 
-<div class="transaction_show">
-  <h1>Transaction Details</h1>
+        <div class="transaction_show">
+          <h1>Transaction Details</h1>
 
-  <table>
-    <tr>    
-      <th>Reference</th>
-      <td><%= @transaction.id %></td>
-    </tr>
-    <tr>
-      <th>Date</th>
-      <td><%= @transaction.transaction_datetime %></td>
-    </tr>
-    <tr>
-      <th>Transactor</th>
-      <td><%= @transaction.transactor %></td>
-    </tr>
-    <tr>
-      <th>Message</th>
-      <td><%= @transaction.message %></td>
-    </tr>
-    <tr>
-      <th>Amount</th>
-      <td><%= "%.2f" % @transaction.amount %></td>
-    </tr>
-  </table>
+          <table class= "transaction_table">
+            <tr>    
+              <th>Reference</th>
+              <td><%= @transaction.id %></td>
+            </tr>
+            <tr>
+              <th>Date</th>
+              <td><%= @transaction.transaction_datetime %></td>
+            </tr>
+            <tr>
+              <th>Transactor</th>
+              <td><%= @transaction.transactor %></td>
+            </tr>
+            <tr>
+              <th>Message</th>
+              <td><%= @transaction.message %></td>
+            </tr>
+            <tr>
+              <th>Amount</th>
+              <td><%= "%.2f" % @transaction.amount %></td>
+            </tr>
+          </table>
 
-  <%= link_to("Edit transaction", edit_transaction_path(@transaction, account_id: @account ), :class => 'link_to_actions')  if current_user.admin %>
-  <%= link_to("Delete transaction", delete_transaction_path(@transaction,account_id:@account), :class => 'link_to_actions') if current_user.admin %>
+          <%= link_to("Edit transaction", edit_transaction_path(@transaction, account_id: @account ), :class => 'link_to_actions')  if current_user.admin %>
+          <%= link_to("Delete transaction", delete_transaction_path(@transaction,account_id:@account), :class => 'link_to_actions') if current_user.admin %>
 
-  <br/><br/>
+          <br/><br/>
 
-  <h5>If you think a transaction is fraudulent, please <%= link_to "contact us", {:controller => "contact", :action => "index"} %> to report this.</h5>
+          <h5>If you think a transaction is fraudulent, please <%= link_to "contact us", {:controller => "contact", :action => "index"} %> to report this.</h5>
 
-</div>
+        </div>
+    </body>
+</html>
+

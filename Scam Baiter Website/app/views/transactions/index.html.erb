@@ -1,36 +1,43 @@
-<div class="transactions_index">
-    <h1>Transaction History</h1>
+<html>
+    <body class= "background">
+        <div class="transactions_index">
+            <h1>Transaction History</h1>
 
-    <% if !logged_in? %>
-        <h3 class="warning">Please <%= link_to "login", {:controller=> "sessions",:action => "new"} %> first!</h3>  
-    <% else %> 
-        <%= link_to("Add New Transactions", new_transaction_path(account_id: @account.id), :class => 'add_transaction_btn') if current_user.admin %>
+            <% if !logged_in? %>
+                <h3 class="warning">Please <%= link_to "login", {:controller=> "sessions",:action => "new"} %> first!</h3>  
+            <% else %> 
+                <%= link_to("Add New Transactions", new_transaction_path(account_id: @account.id), :class => 'add_transaction_btn') if current_user.admin %>
 
-        <% if @transactions.any? %>
-            <table class="transaction_list">
-                <tr>
-                    <th>Date</th>
-                    <th>Transactor</th>
-                    <th>Message</th>
-                    <th>Amount</th>
-                    <th>Actions</th>
-                </tr>
-                <% @transactions.each do |transaction| %>
-                    <tr>
-                        <td><%= transaction.transaction_datetime.strftime("%d-%m-%Y") %></td>
-                        <td><%= transaction.transactor %></td>
-                        <td><%= transaction.message %></td>
-                        <td><%= "%.2f" % transaction.amount %></td>
-                        <td class="actions">
-                            <%= link_to("Details", transaction_path(transaction, account_id:@account), :class => 'transaction_show') %>
-                            <%= link_to("Edit", edit_transaction_path(transaction, account_id:@account), :class => 'transaction_edit') if current_user.admin %>
-                            <%= link_to("Delete", delete_transaction_path(transaction, account_id:@account), :class => 'transaction_delete') if current_user.admin %>
-                        </td>
-                    </tr>
+                <% if @transactions.any? %>
+                    <table class="transaction_table transaction_data_table">
+                        <tr>
+                            <th>Date</th>
+                            <th>Transactor</th>
+                            <th>Message</th>
+                            <th>Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                        <% @transactions.each do |transaction| %>
+                            <tr>
+                                <td><%= transaction.transaction_datetime.strftime("%d-%m-%Y") %></td>
+                                <td><%= transaction.transactor %></td>
+                                <td><%= transaction.message %></td>
+                                <td><%= "%.2f" % transaction.amount %></td>
+                                <td class="actions">
+                                    <%= link_to("Details", transaction_path(transaction, account_id:@account), :class => 'transaction_show') %>
+                                    <%= link_to("Edit", edit_transaction_path(transaction, account_id:@account), :class => 'transaction_edit') if current_user.admin %>
+                                    <%= link_to("Delete", delete_transaction_path(transaction, account_id:@account), :class => 'transaction_delete') if current_user.admin %>
+                                </td>
+                            </tr>
+                        <% end %>
+                    </table>
+                <% else %>
+                    <h3 class="warning">Note: No transactions yet.</h3>
                 <% end %>
-            </table>
-        <% else %>
-            <h3 class="warning">Note: No transactions yet.</h3>
-        <% end %>
-    <% end %>
-</div>
+            <% end %>
+        </div>
+
+    </body>
+</html>
+
+
