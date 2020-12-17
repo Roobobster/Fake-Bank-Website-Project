@@ -1,9 +1,0 @@
-{
-  "name": "Scam_Baiter_Website",
-  "private": true,
-  "dependencies": {
-    "bootstrap": "^4.5.3",
-    "jquery": "^3.5.1",
-    "popper.js": "^1.16.1"
-  }
-}
