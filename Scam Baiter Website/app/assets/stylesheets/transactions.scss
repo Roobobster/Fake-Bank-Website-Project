@@ -86,7 +86,7 @@
   background-color: #e2c35e;
 }
 
-.transaction_show, .transaction_edit, .transaction_new, .transaction_delete {
+.transaction_table, .transaction_edit, .transaction_new, .transaction_delete, .transaction_show {
   text-align: center;
 }
 
@@ -98,37 +98,52 @@
   margin: auto;
 }
 
-.transaction_show table, #transaction_form{
+.add_transaction{
+  background-color: rgba(255, 255, 255, 0.692);
+  border-radius: 10px;
+}
+
+.transaction_table {
   text-align: left;
   margin: 20px auto;
 }
 
-.transaction_show td, th, #transaction_form td, th  {
-  border: 1px solid #ddd;
+.transaction_data_table{
+  text-align: left;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.transaction_table td, th {
+  border: 1px solid rgb(255, 240, 199);
   padding: 10px 20px;
 }
 
-.transaction_show th {
+.transaction_table th {
   font-size: 18px;
-  background-color: #0a7c2c;
+  background-color: #0a7c2ce1;
   color: white;
 }
 
-.transaction_show td, #transaction_form td {
+.transaction_table td{
   width: 75%;
 }
 
-.transaction_show tr:nth-child(even) {
-  background-color: #f2f2f2;
+.transaction_table tr:nth-child(even) {
+  background-color: #d1f2fade;
 }
 
-#transaction_form th {
+.transaction_table tr:nth-child(odd) {
+  background-color: #c3d5dade;
+}
+
+.transaction_table th {
   font-size: 18px;
-  background-color: #cf5131;
+  background-color: rgba(202, 110, 35, 0.815);
   color: white;
 }
 
-#transaction_form input {
+.transaction_table input {
   width: 100%;
   border: none;
   border-bottom: 1px lightgrey solid;

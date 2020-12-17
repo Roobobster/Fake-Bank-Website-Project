@@ -1,73 +1,78 @@
 <html>
   <body  class= "profile-body">
     <%= link_to("<< Back to List", profiles_path, :class => 'back-link') %>
-
     <div class="profile-content">
       <h2 class="text-center profile-title" >Update Profile</h2>
-      <div class = "profile-form-div">
-          <%= form_for(@profile) do |f| %>
-
-            <table summary="Profile form fields" class = 'profile-text profile-form'>
-
-              <tr>
-                <th>UserName</th>
-                <td><%= f.text_field(:username) %></td>
-              </tr>
-
-              <tr>
-                <th>Password</th>
-                <td><%= f.text_field(:password) %></td>
-              </tr>
-
-              <tr>
-                  <th>Email</th>
-                  <td><%=f.text_field(:email) %></td>
-              </tr>
-
-              <tr>
-                <th>Address</th>
-                <td><%= f.text_field(:address) %></td>
-              </tr>
-
-
-              <tr>
-                <th>Phone Number</th>
-                <td><%= f.text_field(:telephone) %></td>
-              </tr>
-
-
-              <tr>
-                <th>First Name</th>
-                <td><%= f.text_field(:first_name) %></td>
-              </tr>
-
-
-              <tr>
-                <th>Last Name</th>
-                <td><%=f.text_field(:last_name) %></td>
-              </tr>
-
-              <tr>
-                <th>Age</th>
-                <td><%= f.text_field(:age) %></td>
-              </tr>
-
-              <tr>
-                <th>Gender</th>
-                <td><%= f.text_field(:gender) %></td>
-              </tr>
-
-              <tr>
-                <th>Admin Status</th>
-                <td><%= f.text_field(:admin) %></td>
-              </tr>
-            </table>
-            
-            <div class="p-4 text-center">
-              <%= f.submit("Update Profile", :class => 'btn-profile', :id => "edit-profile-btn") %>
-            </div>
-        <% end %>
+      <div class="p-4 text-center" > 
+        <%= link_to("Account Menu", accounts_path(id: @profile.id), :class => 'btn-profile edit-button', id: "account-index-button") %>      
       </div>
+
+      
+        <div class = "profile-form-div">
+            <%= form_for(@profile) do |f| %>
+
+              <table summary="Profile form fields" class = 'profile-text profile-form'>
+
+                <tr>
+                  <th>UserName</th>
+                  <td><%= f.text_field(:username) %></td>
+                </tr>
+
+                <tr>
+                  <th>Password</th>
+                  <td><%= f.text_field(:password) %></td>
+                </tr>
+
+                <tr>
+                    <th>Email</th>
+                    <td><%=f.text_field(:email) %></td>
+                </tr>
+
+                <tr>
+                  <th>Address</th>
+                  <td><%= f.text_field(:address) %></td>
+                </tr>
+
+
+                <tr>
+                  <th>Phone Number</th>
+                  <td><%= f.text_field(:telephone) %></td>
+                </tr>
+
+
+                <tr>
+                  <th>First Name</th>
+                  <td><%= f.text_field(:first_name) %></td>
+                </tr>
+
+
+                <tr>
+                  <th>Last Name</th>
+                  <td><%=f.text_field(:last_name) %></td>
+                </tr>
+
+                <tr>
+                  <th>Age</th>
+                  <td><%= f.text_field(:age) %></td>
+                </tr>
+
+                <tr>
+                  <th>Gender</th>
+                  <td><%= f.text_field(:gender) %></td>
+                </tr>
+
+                <tr>
+                  <th>Admin Status</th>
+                  <td><%= f.text_field(:admin) %></td>
+                </tr>
+              </table>
+
+              <div class="profile-form-buttons">
+                <%= f.submit("Update Profile", :class => 'btn-profile edit-button', :id => "edit-profile-btn") %>
+              </div>
+          <% end %>
+        </div>  
+
     </div>
   <body>
 </html>

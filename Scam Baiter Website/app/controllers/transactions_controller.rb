@@ -16,7 +16,7 @@ class TransactionsController < ApplicationController
   def create 
     @transaction = @account.transactions.build(transaction_params)
     if @transaction.save
-      redirect_to(account_transaction_path(@account, @transaction))
+      redirect_to(transaction_path(@transaction,account_id: @account.id))
     else 
       render('new')
     end 
@@ -25,7 +25,7 @@ class TransactionsController < ApplicationController
   def add_rand_trans
     @transaction = @account.add_random_transactions
     if @transaction.save
-      redirect_to(account_transaction_path(@account, @transaction))
+      redirect_to(transaction_path(@transaction, account_id: @account.id ))
     else 
       render('new')
     end 
@@ -36,7 +36,7 @@ class TransactionsController < ApplicationController
 
   def update 
     if @transaction.update(transaction_params)
-      redirect_to(account_transactions_path(@account))
+      redirect_to(transactions_path(account_id: @account.id))
     else 
       render('edit')
     end 
@@ -47,7 +47,7 @@ class TransactionsController < ApplicationController
 
   def destroy
     @transaction.destroy
-    redirect_to(account_transactions_path(@account))
+    redirect_to(transactions_path(account_id: @account.id))
   end 
 
   private 

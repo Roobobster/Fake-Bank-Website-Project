@@ -23,11 +23,15 @@
 }
 
 .columns {
+    
     margin: 0 300px; 
     display: flex;
 }
 
 .column {
+    background-color: rgba(255, 255, 255, 0.767);
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
     margin: 0 10px; 
     width: 300px;
 }
@@ -186,6 +190,12 @@ html{
 }
    
 .register-body { 
+    min-height: 100%;
+    background-image: url("https://wallpapercave.com/wp/wp2546203.jpg");
+    background-size: cover; 
+}
+
+.home-body { 
     min-height: 100%;
     background-image: url("https://wallpapercave.com/wp/wp2546203.jpg");
     background-size: cover; 

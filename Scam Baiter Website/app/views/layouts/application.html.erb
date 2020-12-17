@@ -12,6 +12,7 @@
   </head>
 
   <body>
+
   
   <% unless controller_name == "sessions" %>
   <nav class="navbar navbar-expand-md navbar-light navbar-fixed-top">
@@ -28,7 +29,7 @@
                     <%= link_to "Contact us", {:controller => "contact", :action => "index"} %>
                 </li>
                 <li class="nav-item">
-                    <%= link_to "Accounts", {:controller => "accounts", :action => "index"} %>
+                    <%= link_to("Accounts", accounts_path(id: current_user.id))%>
                 </li>
 
                 <% if !logged_in? %>
