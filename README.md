@@ -22,4 +22,20 @@ Customer Credentials Username: Robert1 password: password
 
 ## Website Pages
 
-Below is a few snapshots of what the pages look.
+Below is just a few snapshots of what some of the pages look like.
+
+![Login Page](/readmeImages/Login.png)
+
+![Profiles Page](/readmeImages/Profiles.png)
+
+![Accounts Page](/readmeImages/Accounts.png)
+
+![Edit Account Page](/readmeImages/EditAccount.png)
+
+![Transaction Menu Page](/readmeImages/TransactionMenu.png)
+
+![Add Transaction Page](/readmeImages/AddTransaction.png)
+
+![Random Transaction Page](/readmeImages/RandomTransaction.png)
+
+
